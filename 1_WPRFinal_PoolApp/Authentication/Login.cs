@@ -146,6 +146,7 @@ namespace _1_WPRFinal_PoolApp.Authentication
                     frmUser.SetUserData(AccID);
                     this.Hide();
                     //user.Admin();
+                    Data.init();
                     frmUser.ShowDialog();
                     
                 }

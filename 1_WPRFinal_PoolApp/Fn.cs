@@ -17,9 +17,72 @@ namespace _1_WPRFinal_PoolApp
         public string Role { get; set; }
         public string Message { get; set; } // for error messages or other messages
     }
-    public class Fn
+
+    public static class Data
     {
 
+        public static List<Facility> facilities;
+        public static List<TOURNAMENT> TOURNAMENTs;
+        public static List<TABLE> TABLEs;
+        public static void init()
+        {
+            facilities = Facility.LoadFacilitiesFromDatabase();
+            TOURNAMENTs = TOURNAMENT.LoadTournamentsFromDatabase();
+            TABLEs = TABLE.LoadTablesFromDatabase();
+
+        }
+    }
+    public class Fn
+    {
+        public static int GenerateUniqueRandomID(string query)
+        {
+            int randomID;
+            bool isUnique = false;
+            Random rand = new Random();
+
+            // Loop until a unique ID is generated
+            while (!isUnique)
+            {
+                randomID = rand.Next(100000000, 1000000000); // Generate a random 9-digit integer ID
+
+                // Check if the generated ID is unique in the database
+                if (IsIDUniqueInDatabase(randomID,query))
+                {
+                    isUnique = true;
+                    return randomID;
+                }
+            }
+
+            return -1; // Return -1 if unable to generate a unique ID (this should ideally not happen)
+        }
+
+
+        private static bool IsIDUniqueInDatabase(int id,string query)
+        {
+            using (SqlConnection connection = new SqlConnection(Fn.Con()))
+            {
+                connection.Open();
+
+                /*// SQL query to check if the ID exists in the Accounts table
+                string query = "SELECT COUNT(*) FROM Accounts WHERE ID = @ID";*/
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ID", id);
+                    int count = (int)command.ExecuteScalar();
+
+                    // If count is 0, ID is unique, otherwise it's not unique
+                    return count == 0;
+                }
+            }
+        }
+
+
+        public static string Con()
+        {
+            CONNECT Con = new CONNECT();
+            return Con.String;
+        }
         public static (bool isValid, string errorMessage) ValidateInput(string firstName, string lastName, string gender, DateTime dob, string phone)
         {
             if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
