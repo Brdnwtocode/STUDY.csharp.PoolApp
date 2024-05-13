@@ -21,6 +21,7 @@ namespace _1_WPRFinal_PoolApp.Authentication
         }
         CONNECT Con = new CONNECT();
         bool saveinfo = false;
+        int AccID;
 
         // --- functions in controls
         private void loadInfo()
@@ -61,7 +62,7 @@ namespace _1_WPRFinal_PoolApp.Authentication
                     connection.Open();
 
                     // SQL query to check login credentials and retrieve role and status
-                    string query = "SELECT Type, Status FROM Accounts WHERE Email = @UserName AND Password = @Password";
+                    string query = "SELECT Type, Status,ID FROM Accounts WHERE Email = @UserName AND Password = @Password";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -83,6 +84,7 @@ namespace _1_WPRFinal_PoolApp.Authentication
                                     result.IsSuccessful = true;
                                     result.Role = role;
                                     result.Message = "Login successful";
+                                    AccID = int.Parse(Convert.ToString(reader["ID"]));
                                 }
                                 else
                                 {
@@ -141,6 +143,7 @@ namespace _1_WPRFinal_PoolApp.Authentication
                 if (loginResult.Role == "User")
                 {
                     frmUser frmUser = new frmUser();
+                    frmUser.SetUserData(AccID);
                     this.Hide();
                     //user.Admin();
                     frmUser.ShowDialog();

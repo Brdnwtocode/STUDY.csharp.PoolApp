@@ -30,35 +30,35 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUser));
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnFind = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnTournament = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnRank = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblRank = new System.Windows.Forms.Label();
-            this.lblWinrate = new System.Windows.Forms.Label();
             this.lblBio = new System.Windows.Forms.Label();
             this.lblFavourite = new System.Windows.Forms.Label();
+            this.lblWinrate = new System.Windows.Forms.Label();
+            this.lblRank = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnRank = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTournament = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnFind = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.fpnlTables = new System.Windows.Forms.FlowLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.pnlLocation = new System.Windows.Forms.Panel();
             this.pnlTourPost = new System.Windows.Forms.Panel();
+            this.pnlLocation = new System.Windows.Forms.Panel();
+            this.fpnlTables = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,55 +76,99 @@
             this.flowLayoutPanel2.TabIndex = 4;
             this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
-            // panel4
+            // panel1
             // 
-            this.panel4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel4.Controls.Add(this.btnFind);
-            this.panel4.Location = new System.Drawing.Point(3, 552);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(413, 120);
-            this.panel4.TabIndex = 2;
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.lblFavourite);
+            this.panel1.Controls.Add(this.lblWinrate);
+            this.panel1.Controls.Add(this.lblRank);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(413, 291);
+            this.panel1.TabIndex = 0;
             // 
-            // btnFind
+            // panel7
             // 
-            this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.btnFind.FlatAppearance.BorderSize = 0;
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Font = new System.Drawing.Font("VNI-Avo", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnFind.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
-            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFind.Location = new System.Drawing.Point(3, 3);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(407, 114);
-            this.btnFind.TabIndex = 0;
-            this.btnFind.Text = "Find";
-            this.btnFind.UseVisualStyleBackColor = true;
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.pictureBox1);
+            this.panel7.Controls.Add(this.lblName);
+            this.panel7.Controls.Add(this.lblBio);
+            this.panel7.Location = new System.Drawing.Point(15, 9);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(382, 157);
+            this.panel7.TabIndex = 6;
             // 
-            // panel2
+            // pictureBox1
             // 
-            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel2.Controls.Add(this.btnTournament);
-            this.panel2.Location = new System.Drawing.Point(3, 426);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(413, 120);
-            this.panel2.TabIndex = 3;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // btnTournament
+            // lblName
             // 
-            this.btnTournament.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.btnTournament.FlatAppearance.BorderSize = 0;
-            this.btnTournament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTournament.Font = new System.Drawing.Font("VNI-Avo", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnTournament.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnTournament.Image = ((System.Drawing.Image)(resources.GetObject("btnTournament.Image")));
-            this.btnTournament.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnTournament.Location = new System.Drawing.Point(6, 3);
-            this.btnTournament.Name = "btnTournament";
-            this.btnTournament.Size = new System.Drawing.Size(404, 117);
-            this.btnTournament.TabIndex = 2;
-            this.btnTournament.Text = "Tournament";
-            this.btnTournament.UseVisualStyleBackColor = true;
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("VNI-Avo", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.ForeColor = System.Drawing.Color.Black;
+            this.lblName.Location = new System.Drawing.Point(159, 24);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(75, 31);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Hello ";
+            // 
+            // lblBio
+            // 
+            this.lblBio.AutoSize = true;
+            this.lblBio.BackColor = System.Drawing.Color.Transparent;
+            this.lblBio.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblBio.ForeColor = System.Drawing.Color.Black;
+            this.lblBio.Location = new System.Drawing.Point(159, 65);
+            this.lblBio.Name = "lblBio";
+            this.lblBio.Size = new System.Drawing.Size(76, 25);
+            this.lblBio.TabIndex = 4;
+            this.lblBio.Text = "Set Bio!";
+            // 
+            // lblFavourite
+            // 
+            this.lblFavourite.AutoSize = true;
+            this.lblFavourite.BackColor = System.Drawing.Color.RoyalBlue;
+            this.lblFavourite.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblFavourite.ForeColor = System.Drawing.Color.SpringGreen;
+            this.lblFavourite.Location = new System.Drawing.Point(286, 202);
+            this.lblFavourite.Name = "lblFavourite";
+            this.lblFavourite.Size = new System.Drawing.Size(93, 27);
+            this.lblFavourite.TabIndex = 5;
+            this.lblFavourite.Text = "Favourite";
+            // 
+            // lblWinrate
+            // 
+            this.lblWinrate.AutoSize = true;
+            this.lblWinrate.BackColor = System.Drawing.Color.RoyalBlue;
+            this.lblWinrate.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblWinrate.ForeColor = System.Drawing.Color.SpringGreen;
+            this.lblWinrate.Location = new System.Drawing.Point(147, 202);
+            this.lblWinrate.Name = "lblWinrate";
+            this.lblWinrate.Size = new System.Drawing.Size(83, 27);
+            this.lblWinrate.TabIndex = 3;
+            this.lblWinrate.Text = "WinRate";
+            // 
+            // lblRank
+            // 
+            this.lblRank.AutoSize = true;
+            this.lblRank.BackColor = System.Drawing.Color.RoyalBlue;
+            this.lblRank.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblRank.ForeColor = System.Drawing.Color.SpringGreen;
+            this.lblRank.Location = new System.Drawing.Point(26, 202);
+            this.lblRank.Name = "lblRank";
+            this.lblRank.Size = new System.Drawing.Size(65, 27);
+            this.lblRank.TabIndex = 2;
+            this.lblRank.Text = "Rank ";
             // 
             // panel3
             // 
@@ -151,86 +195,55 @@
             this.btnRank.Text = "Career";
             this.btnRank.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.lblFavourite);
-            this.panel1.Controls.Add(this.lblWinrate);
-            this.panel1.Controls.Add(this.lblRank);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(413, 291);
-            this.panel1.TabIndex = 0;
+            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel2.Controls.Add(this.btnTournament);
+            this.panel2.Location = new System.Drawing.Point(3, 426);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(413, 120);
+            this.panel2.TabIndex = 3;
             // 
-            // pictureBox1
+            // btnTournament
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnTournament.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnTournament.FlatAppearance.BorderSize = 0;
+            this.btnTournament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTournament.Font = new System.Drawing.Font("VNI-Avo", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnTournament.ForeColor = System.Drawing.Color.SpringGreen;
+            this.btnTournament.Image = ((System.Drawing.Image)(resources.GetObject("btnTournament.Image")));
+            this.btnTournament.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnTournament.Location = new System.Drawing.Point(6, 3);
+            this.btnTournament.Name = "btnTournament";
+            this.btnTournament.Size = new System.Drawing.Size(404, 117);
+            this.btnTournament.TabIndex = 2;
+            this.btnTournament.Text = "Tournament";
+            this.btnTournament.UseVisualStyleBackColor = true;
             // 
-            // lblName
+            // panel4
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.BackColor = System.Drawing.Color.Transparent;
-            this.lblName.Font = new System.Drawing.Font("VNI-Avo", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblName.ForeColor = System.Drawing.Color.Black;
-            this.lblName.Location = new System.Drawing.Point(159, 24);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(142, 31);
-            this.lblName.TabIndex = 1;
-            this.lblName.Text = "Hello Name";
+            this.panel4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel4.Controls.Add(this.btnFind);
+            this.panel4.Location = new System.Drawing.Point(3, 552);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(413, 120);
+            this.panel4.TabIndex = 2;
             // 
-            // lblRank
+            // btnFind
             // 
-            this.lblRank.AutoSize = true;
-            this.lblRank.BackColor = System.Drawing.Color.RoyalBlue;
-            this.lblRank.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblRank.ForeColor = System.Drawing.Color.SpringGreen;
-            this.lblRank.Location = new System.Drawing.Point(26, 202);
-            this.lblRank.Name = "lblRank";
-            this.lblRank.Size = new System.Drawing.Size(65, 27);
-            this.lblRank.TabIndex = 2;
-            this.lblRank.Text = "Rank ";
-            // 
-            // lblWinrate
-            // 
-            this.lblWinrate.AutoSize = true;
-            this.lblWinrate.BackColor = System.Drawing.Color.RoyalBlue;
-            this.lblWinrate.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblWinrate.ForeColor = System.Drawing.Color.SpringGreen;
-            this.lblWinrate.Location = new System.Drawing.Point(147, 202);
-            this.lblWinrate.Name = "lblWinrate";
-            this.lblWinrate.Size = new System.Drawing.Size(83, 27);
-            this.lblWinrate.TabIndex = 3;
-            this.lblWinrate.Text = "WinRate";
-            // 
-            // lblBio
-            // 
-            this.lblBio.AutoSize = true;
-            this.lblBio.BackColor = System.Drawing.Color.Transparent;
-            this.lblBio.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblBio.ForeColor = System.Drawing.Color.Black;
-            this.lblBio.Location = new System.Drawing.Point(159, 65);
-            this.lblBio.Name = "lblBio";
-            this.lblBio.Size = new System.Drawing.Size(38, 25);
-            this.lblBio.TabIndex = 4;
-            this.lblBio.Text = "Bio";
-            // 
-            // lblFavourite
-            // 
-            this.lblFavourite.AutoSize = true;
-            this.lblFavourite.BackColor = System.Drawing.Color.RoyalBlue;
-            this.lblFavourite.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblFavourite.ForeColor = System.Drawing.Color.SpringGreen;
-            this.lblFavourite.Location = new System.Drawing.Point(286, 202);
-            this.lblFavourite.Name = "lblFavourite";
-            this.lblFavourite.Size = new System.Drawing.Size(93, 27);
-            this.lblFavourite.TabIndex = 5;
-            this.lblFavourite.Text = "Favourite";
+            this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnFind.FlatAppearance.BorderSize = 0;
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Font = new System.Drawing.Font("VNI-Avo", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnFind.ForeColor = System.Drawing.Color.SpringGreen;
+            this.btnFind.Image = ((System.Drawing.Image)(resources.GetObject("btnFind.Image")));
+            this.btnFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFind.Location = new System.Drawing.Point(3, 3);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(407, 114);
+            this.btnFind.TabIndex = 0;
+            this.btnFind.Text = "Find";
+            this.btnFind.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -253,25 +266,6 @@
             this.panel6.Size = new System.Drawing.Size(728, 544);
             this.panel6.TabIndex = 5;
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.pictureBox1);
-            this.panel7.Controls.Add(this.lblName);
-            this.panel7.Controls.Add(this.lblBio);
-            this.panel7.Location = new System.Drawing.Point(15, 9);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(382, 157);
-            this.panel7.TabIndex = 6;
-            // 
-            // fpnlTables
-            // 
-            this.fpnlTables.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fpnlTables.Location = new System.Drawing.Point(0, 0);
-            this.fpnlTables.Name = "fpnlTables";
-            this.fpnlTables.Size = new System.Drawing.Size(728, 213);
-            this.fpnlTables.TabIndex = 0;
-            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.pnlTourPost);
@@ -282,6 +276,14 @@
             this.panel8.Size = new System.Drawing.Size(728, 331);
             this.panel8.TabIndex = 1;
             // 
+            // pnlTourPost
+            // 
+            this.pnlTourPost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTourPost.Location = new System.Drawing.Point(356, 0);
+            this.pnlTourPost.Name = "pnlTourPost";
+            this.pnlTourPost.Size = new System.Drawing.Size(372, 331);
+            this.pnlTourPost.TabIndex = 1;
+            // 
             // pnlLocation
             // 
             this.pnlLocation.AutoScroll = true;
@@ -291,13 +293,13 @@
             this.pnlLocation.Size = new System.Drawing.Size(356, 331);
             this.pnlLocation.TabIndex = 0;
             // 
-            // pnlTourPost
+            // fpnlTables
             // 
-            this.pnlTourPost.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTourPost.Location = new System.Drawing.Point(356, 0);
-            this.pnlTourPost.Name = "pnlTourPost";
-            this.pnlTourPost.Size = new System.Drawing.Size(372, 331);
-            this.pnlTourPost.TabIndex = 1;
+            this.fpnlTables.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fpnlTables.Location = new System.Drawing.Point(0, 0);
+            this.fpnlTables.Name = "fpnlTables";
+            this.fpnlTables.Size = new System.Drawing.Size(728, 213);
+            this.fpnlTables.TabIndex = 0;
             // 
             // frmUser
             // 
@@ -311,16 +313,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User";
             this.flowLayoutPanel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -331,7 +333,6 @@
         private FlowLayoutPanel flowLayoutPanel2;
         private Panel panel1;
         private Label lblFavourite;
-        private Label lblBio;
         private Label lblWinrate;
         private Label lblRank;
         private Label lblName;
@@ -349,5 +350,6 @@
         private Panel panel8;
         private Panel pnlTourPost;
         private Panel pnlLocation;
+        private Label lblBio;
     }
 }
