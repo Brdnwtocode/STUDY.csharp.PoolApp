@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -112,7 +113,74 @@ namespace _1_WPRFinal_PoolApp
                 }
             }
         }
+        //
 
+        // -- Get User Name 
+        public static string GetUserNameFromID(int userID)
+        {
+            USER user = Data.USERs.FirstOrDefault(u => u.ID == userID);
+            return user != null ? $"{user.FirstName} {user.LastName}" : null;
+        }
+        //
+
+
+        // -- Load User Data to static List 
+        private static Image LoadImageFromDatabase(object imageData)
+        {
+            if (imageData == null || imageData == DBNull.Value)
+                return null;
+
+            byte[] imageBytes = (byte[])imageData;
+            using (MemoryStream ms = new MemoryStream(imageBytes))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+        public static List<USER> LoadUsersFromDatabase(string query)
+        {
+            List<USER> users = new List<USER>();
+
+            using (SqlConnection connection = new SqlConnection(Fn.Con()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DateTime dob = Convert.ToDateTime(reader["DOB"]);
+                            USER user = new USER
+                            {
+                                ID = (int)reader["ID"],
+                                FirstName = reader["FirstName"].ToString(),
+                                LastName = reader["LastName"].ToString(),
+                                // Parse Date of Birth
+
+                                DOB = new DateOnly(dob.Year, dob.Month, dob.Day), // Extract date part
+                                Gender = reader["Gender"].ToString(),
+                                Phone = reader["Phone"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                Rank = reader["Rank"].ToString(),
+                                Private = Convert.ToBoolean(reader["PrivateAcc"]),
+                                Matches = (int)reader["Matches"],
+                                Winrate = reader["Winrate"] != DBNull.Value ? Convert.ToSingle(reader["Winrate"]) : 0.0f,
+                                Flag = reader["Flag"].ToString(),
+                                Bio = reader["Bio"].ToString(),
+                                Favourite = reader["Favorite"].ToString(),
+                                // Load Picture if available
+                                Picture = LoadImageFromDatabase(reader["Picture"]),
+                            };
+
+                            users.Add(user);
+                        }
+                    }
+                }
+            }
+
+            return users;
+        }
 
     }
 }

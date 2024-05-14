@@ -49,6 +49,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.pnlTourPost = new System.Windows.Forms.Panel();
             this.pnlLocation = new System.Windows.Forms.Panel();
+            this.fpnlLocation = new System.Windows.Forms.FlowLayoutPanel();
             this.fpnlTables = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlAddTable = new System.Windows.Forms.Panel();
             this.btnCreateTable = new System.Windows.Forms.Button();
@@ -70,6 +71,9 @@
             this.nudTableNumber = new System.Windows.Forms.NumericUpDown();
             this.cbFacility = new System.Windows.Forms.ComboBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,6 +85,7 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.pnlLocation.SuspendLayout();
             this.fpnlTables.SuspendLayout();
             this.pnlAddTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerLimit)).BeginInit();
@@ -89,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMonthOfDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDayOfDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTableNumber)).BeginInit();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel2
@@ -101,7 +107,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(450, 588);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(450, 631);
             this.flowLayoutPanel2.TabIndex = 4;
             this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
@@ -273,6 +279,7 @@
             this.btnFind.TabIndex = 0;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // panel5
             // 
@@ -281,7 +288,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1188, 588);
+            this.panel5.Size = new System.Drawing.Size(1188, 631);
             this.panel5.TabIndex = 5;
             // 
             // panel6
@@ -292,7 +299,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(450, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(738, 588);
+            this.panel6.Size = new System.Drawing.Size(738, 631);
             this.panel6.TabIndex = 5;
             // 
             // panel8
@@ -302,7 +309,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 239);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(738, 349);
+            this.panel8.Size = new System.Drawing.Size(738, 392);
             this.panel8.TabIndex = 1;
             // 
             // pnlTourPost
@@ -310,20 +317,29 @@
             this.pnlTourPost.AutoScroll = true;
             this.pnlTourPost.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pnlTourPost.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTourPost.Location = new System.Drawing.Point(356, 0);
+            this.pnlTourPost.Location = new System.Drawing.Point(369, 0);
             this.pnlTourPost.Name = "pnlTourPost";
-            this.pnlTourPost.Size = new System.Drawing.Size(382, 349);
+            this.pnlTourPost.Size = new System.Drawing.Size(369, 392);
             this.pnlTourPost.TabIndex = 1;
             // 
             // pnlLocation
             // 
-            this.pnlLocation.AutoScroll = true;
             this.pnlLocation.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlLocation.Controls.Add(this.fpnlLocation);
             this.pnlLocation.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLocation.Location = new System.Drawing.Point(0, 0);
             this.pnlLocation.Name = "pnlLocation";
-            this.pnlLocation.Size = new System.Drawing.Size(356, 349);
+            this.pnlLocation.Size = new System.Drawing.Size(369, 392);
             this.pnlLocation.TabIndex = 0;
+            // 
+            // fpnlLocation
+            // 
+            this.fpnlLocation.AutoScroll = true;
+            this.fpnlLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpnlLocation.Location = new System.Drawing.Point(0, 0);
+            this.fpnlLocation.Name = "fpnlLocation";
+            this.fpnlLocation.Size = new System.Drawing.Size(369, 392);
+            this.fpnlLocation.TabIndex = 0;
             // 
             // fpnlTables
             // 
@@ -455,9 +471,24 @@
             this.nudPlayerLimit.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.nudPlayerLimit.ForeColor = System.Drawing.Color.Gold;
             this.nudPlayerLimit.Location = new System.Drawing.Point(629, 121);
+            this.nudPlayerLimit.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.nudPlayerLimit.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
             this.nudPlayerLimit.Name = "nudPlayerLimit";
             this.nudPlayerLimit.Size = new System.Drawing.Size(58, 29);
             this.nudPlayerLimit.TabIndex = 10;
+            this.nudPlayerLimit.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
             // 
             // cbGameRules
             // 
@@ -509,6 +540,11 @@
             this.nudHourOfTime.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.nudHourOfTime.ForeColor = System.Drawing.Color.Gold;
             this.nudHourOfTime.Location = new System.Drawing.Point(3, 170);
+            this.nudHourOfTime.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.nudHourOfTime.Name = "nudHourOfTime";
             this.nudHourOfTime.Size = new System.Drawing.Size(63, 29);
             this.nudHourOfTime.TabIndex = 7;
@@ -519,6 +555,11 @@
             this.nudMinuteOfTime.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.nudMinuteOfTime.ForeColor = System.Drawing.Color.Gold;
             this.nudMinuteOfTime.Location = new System.Drawing.Point(72, 170);
+            this.nudMinuteOfTime.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.nudMinuteOfTime.Name = "nudMinuteOfTime";
             this.nudMinuteOfTime.Size = new System.Drawing.Size(61, 29);
             this.nudMinuteOfTime.TabIndex = 6;
@@ -529,9 +570,24 @@
             this.nudMonthOfDate.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.nudMonthOfDate.ForeColor = System.Drawing.Color.Gold;
             this.nudMonthOfDate.Location = new System.Drawing.Point(72, 121);
+            this.nudMonthOfDate.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.nudMonthOfDate.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudMonthOfDate.Name = "nudMonthOfDate";
             this.nudMonthOfDate.Size = new System.Drawing.Size(61, 29);
             this.nudMonthOfDate.TabIndex = 5;
+            this.nudMonthOfDate.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // nudDayOfDate
             // 
@@ -539,6 +595,11 @@
             this.nudDayOfDate.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.nudDayOfDate.ForeColor = System.Drawing.Color.Gold;
             this.nudDayOfDate.Location = new System.Drawing.Point(3, 121);
+            this.nudDayOfDate.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
             this.nudDayOfDate.Name = "nudDayOfDate";
             this.nudDayOfDate.Size = new System.Drawing.Size(63, 29);
             this.nudDayOfDate.TabIndex = 4;
@@ -596,24 +657,55 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel10.Controls.Add(this.label8);
+            this.panel10.Controls.Add(this.label7);
+            this.panel10.Controls.Add(this.button1);
             this.panel10.Location = new System.Drawing.Point(3, 239);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(350, 230);
+            this.panel10.Size = new System.Drawing.Size(250, 230);
             this.panel10.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(37, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 25);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "label8";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(37, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 25);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "label7";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(37, 87);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 34);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel11.Location = new System.Drawing.Point(359, 239);
+            this.panel11.Location = new System.Drawing.Point(259, 239);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(350, 230);
+            this.panel11.Size = new System.Drawing.Size(243, 230);
             this.panel11.TabIndex = 1;
             // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1188, 588);
+            this.ClientSize = new System.Drawing.Size(1188, 631);
             this.Controls.Add(this.panel5);
             this.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MinimumSize = new System.Drawing.Size(1210, 600);
@@ -633,6 +725,7 @@
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            this.pnlLocation.ResumeLayout(false);
             this.fpnlTables.ResumeLayout(false);
             this.pnlAddTable.ResumeLayout(false);
             this.pnlAddTable.PerformLayout();
@@ -642,6 +735,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMonthOfDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDayOfDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTableNumber)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -690,5 +785,9 @@
         private Label label1;
         private NumericUpDown nudPlayerLimit;
         private ComboBox cbGameRules;
+        private Label label8;
+        private Label label7;
+        private Button button1;
+        private FlowLayoutPanel fpnlLocation;
     }
 }

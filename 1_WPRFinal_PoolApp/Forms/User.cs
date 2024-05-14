@@ -114,6 +114,21 @@ namespace _1_WPRFinal_PoolApp.Forms
         }
         //
 
+         // -- Clear controls 
+         private void clearControl()
+        {
+            cbFacility.ResetText();
+            cbGameRules.ResetText();
+            cbGameType.ResetText();
+            nudDayOfDate.ResetText();
+            nudHourOfTime.ResetText();
+            nudMinuteOfTime.ResetText();
+            nudMonthOfDate.ResetText();
+            nudPlayerLimit.ResetText();
+            txtPrivateKey.ResetText();
+            ckbPrivate.Checked = false;
+
+        }
      
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -135,6 +150,7 @@ namespace _1_WPRFinal_PoolApp.Forms
         {
             LoadFacilitiesComboBox();
             TABLE.LoadTables(fpnlTables);
+            Facility.GenerateFacilityPanels(fpnlLocation);
         }
 
         private void cbFacility_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,7 +180,7 @@ namespace _1_WPRFinal_PoolApp.Forms
 
             // Set IsPublic based on the state of the checkbox
             tb.IsPublic = !ckbPrivate.Checked;
-
+            tb.PrivateKey = "";
             // If IsPublic is false, set PrivateKey from the textbox
             if (!tb.IsPublic)
             {
@@ -173,7 +189,7 @@ namespace _1_WPRFinal_PoolApp.Forms
 
             // Retrieve Date from NumericUpDown controls
 
-            tb.Date = new DateTime((DateTime.Now.Year), (int)nudMonthOfDate.Value, (int)nudDayOfDate.Value);
+            tb.DATE = new DateTime((DateTime.Now.Year), (int)nudMonthOfDate.Value, (int)nudDayOfDate.Value);
             // Retrieve Time from NumericUpDown controls
             int hour = (int)nudHourOfTime.Value; 
             int minute = (int)nudMinuteOfTime.Value ;
@@ -190,6 +206,8 @@ namespace _1_WPRFinal_PoolApp.Forms
             try
             {
                 tb.InsertTable();
+                Data.TABLEs.Add(tb);
+                TABLE.LoadTables(fpnlTables);
             }
             catch(Exception ex)
             {
@@ -197,12 +215,24 @@ namespace _1_WPRFinal_PoolApp.Forms
                 return;
             }
             MessageBox.Show("Create Table Complete!");
+            clearControl();
+            
         }
 
         private void ckbPrivate_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbPrivate.Checked == true) txtPrivateKey.Visible = true;
             else txtPrivateKey.Visible = false;
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,6 +29,8 @@ namespace _1_WPRFinal_PoolApp.Authentication
         CONNECT Con = new CONNECT();
         string type;
         int ID;
+        string email;
+        string password;
 
         // --- Functions 
         public int GenerateUniqueRandomID()
@@ -114,26 +116,34 @@ namespace _1_WPRFinal_PoolApp.Authentication
         // --- Accounts
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
+            string mail = txtEmail.Text;
             // Validate email format
-            if (!Fn.IsValidEmail(email))
+            if (!Fn.IsValidEmail(mail))
             {
                 MessageBox.Show("Invalid email format.");
                 return;
             }
-            string pass = Fn.encrypt(txtPass.Text);
+            email = mail;
+            password = Fn.encrypt(txtPass.Text);
             type = "User";
-            InsertAccount(email, pass, type);
             pnlInfo.Visible = true;
             pnlPicture.Visible = true;
+            lblBusiness.Visible = false;
         }
 
         private void lblBusiness_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            string email = txtEmail.Text;
-            string pass = txtPass.Text;
+        {   string mail = txtEmail.Text;
+            if (!Fn.IsValidEmail(mail))
+            {
+                MessageBox.Show("Invalid email format.");
+                return;
+            }
+            email = mail;
+             password = txtPass.Text;
             type = "Business";
-            InsertAccount(email, pass, type);
+            pnlInfo.Visible = true;
+            pnlPicture.Visible = true;
+            btnSignUp.Visible = false;
         }
         // ---
 
@@ -197,6 +207,7 @@ namespace _1_WPRFinal_PoolApp.Authentication
                 BUSINESS bUSINESS = new BUSINESS();
 
                 bUSINESS.InsertBusiness(firstName, lastName, gender, dob, phone, email, userID, picture);
+                InsertAccount(email, password, type);
             }
 
             MessageBox.Show(Result.errorMessage + "Register Completed!");

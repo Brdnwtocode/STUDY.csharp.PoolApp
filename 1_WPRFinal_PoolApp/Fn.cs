@@ -20,15 +20,21 @@ namespace _1_WPRFinal_PoolApp
 
     public static class Data
     {
+        public static int AccID { get; set; }
 
+        public static List<USER> USERs;
         public static List<Facility> facilities;
         public static List<TOURNAMENT> TOURNAMENTs;
+        public static List<TOURNAMENT> myTournaments;
         public static List<TABLE> TABLEs;
-        public static void init()
+        public static List<TABLE> myTables;
+        public static void init(int UserID)
         {
+            USERs = USER.LoadUsersFromDatabase("SELECT * FROM Users");
             facilities = Facility.LoadFacilitiesFromDatabase();
             TOURNAMENTs = TOURNAMENT.LoadTournamentsFromDatabase();
-            TABLEs = TABLE.LoadTablesFromDatabase();
+            TABLEs = TABLE.LoadTablesFromDatabase("SELECT * FROM Tables");
+            myTables = TABLE.LoadTablesFromDatabase($"SELECT * FROM Tables WHERE UID = {UserID} ");
         }
     }
     public class Fn
