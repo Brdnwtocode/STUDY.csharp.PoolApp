@@ -1,6 +1,6 @@
-﻿namespace _1_WPRFinal_PoolApp.Forms
+﻿namespace _1_WPRFinal_PoolApp.userForms
 {
-    partial class frmAdmin
+    partial class frmOpenTable
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // frmAdmin
+            // frmOpenTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 451);
-            this.Name = "frmAdmin";
-            this.Text = "Admin";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "frmOpenTable";
+            this.Text = "ViewTable";
             this.ResumeLayout(false);
 
         }

@@ -29,7 +29,6 @@ namespace _1_WPRFinal_PoolApp
             facilities = Facility.LoadFacilitiesFromDatabase();
             TOURNAMENTs = TOURNAMENT.LoadTournamentsFromDatabase();
             TABLEs = TABLE.LoadTablesFromDatabase();
-
         }
     }
     public class Fn

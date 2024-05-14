@@ -112,7 +112,9 @@ namespace _1_WPRFinal_PoolApp.Forms
             }
             return true;
         }
+        //
 
+     
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -132,6 +134,7 @@ namespace _1_WPRFinal_PoolApp.Forms
         private void frmUser_Load(object sender, EventArgs e)
         {
             LoadFacilitiesComboBox();
+            TABLE.LoadTables(fpnlTables);
         }
 
         private void cbFacility_SelectedIndexChanged(object sender, EventArgs e)
@@ -160,7 +163,7 @@ namespace _1_WPRFinal_PoolApp.Forms
             tb.Location = location;
 
             // Set IsPublic based on the state of the checkbox
-            tb.IsPublic = ckbPrivate.Checked;
+            tb.IsPublic = !ckbPrivate.Checked;
 
             // If IsPublic is false, set PrivateKey from the textbox
             if (!tb.IsPublic)
@@ -172,8 +175,9 @@ namespace _1_WPRFinal_PoolApp.Forms
 
             tb.Date = new DateTime((DateTime.Now.Year), (int)nudMonthOfDate.Value, (int)nudDayOfDate.Value);
             // Retrieve Time from NumericUpDown controls
-            tb.Time = new TimeOnly((int)nudHourOfTime.Value, (int)nudMinuteOfTime.Value);
-
+            int hour = (int)nudHourOfTime.Value; 
+            int minute = (int)nudMinuteOfTime.Value ;
+            tb.Time = string.Format("{0:D2}:{1:D2}:00", hour, minute); 
             // Retrieve selected GameType and GameRules from ComboBoxes
             tb.GameType = cbGameType.Text.ToString();
             tb.GameRules = cbGameRules.Text.ToString();

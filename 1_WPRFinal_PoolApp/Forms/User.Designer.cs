@@ -51,26 +51,26 @@
             this.pnlLocation = new System.Windows.Forms.Panel();
             this.fpnlTables = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlAddTable = new System.Windows.Forms.Panel();
+            this.btnCreateTable = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudPlayerLimit = new System.Windows.Forms.NumericUpDown();
+            this.cbGameRules = new System.Windows.Forms.ComboBox();
+            this.cbGameType = new System.Windows.Forms.ComboBox();
+            this.nudHourOfTime = new System.Windows.Forms.NumericUpDown();
+            this.nudMinuteOfTime = new System.Windows.Forms.NumericUpDown();
+            this.nudMonthOfDate = new System.Windows.Forms.NumericUpDown();
+            this.nudDayOfDate = new System.Windows.Forms.NumericUpDown();
+            this.txtPrivateKey = new System.Windows.Forms.TextBox();
+            this.ckbPrivate = new System.Windows.Forms.CheckBox();
+            this.nudTableNumber = new System.Windows.Forms.NumericUpDown();
+            this.cbFacility = new System.Windows.Forms.ComboBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.cbFacility = new System.Windows.Forms.ComboBox();
-            this.nudTableNumber = new System.Windows.Forms.NumericUpDown();
-            this.ckbPrivate = new System.Windows.Forms.CheckBox();
-            this.txtPrivateKey = new System.Windows.Forms.TextBox();
-            this.nudDayOfDate = new System.Windows.Forms.NumericUpDown();
-            this.nudMonthOfDate = new System.Windows.Forms.NumericUpDown();
-            this.nudMinuteOfTime = new System.Windows.Forms.NumericUpDown();
-            this.nudHourOfTime = new System.Windows.Forms.NumericUpDown();
-            this.cbGameType = new System.Windows.Forms.ComboBox();
-            this.cbGameRules = new System.Windows.Forms.ComboBox();
-            this.nudPlayerLimit = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnCreateTable = new System.Windows.Forms.Button();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -83,12 +83,12 @@
             this.panel8.SuspendLayout();
             this.fpnlTables.SuspendLayout();
             this.pnlAddTable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTableNumber)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDayOfDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMonthOfDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinuteOfTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHourOfTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerLimit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHourOfTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinuteOfTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMonthOfDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDayOfDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTableNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel2
@@ -101,7 +101,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(450, 554);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(450, 588);
             this.flowLayoutPanel2.TabIndex = 4;
             this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
@@ -281,7 +281,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1422, 554);
+            this.panel5.Size = new System.Drawing.Size(1188, 588);
             this.panel5.TabIndex = 5;
             // 
             // panel6
@@ -292,7 +292,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(450, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(972, 554);
+            this.panel6.Size = new System.Drawing.Size(738, 588);
             this.panel6.TabIndex = 5;
             // 
             // panel8
@@ -300,9 +300,9 @@
             this.panel8.Controls.Add(this.pnlTourPost);
             this.panel8.Controls.Add(this.pnlLocation);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(0, 232);
+            this.panel8.Location = new System.Drawing.Point(0, 239);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(972, 322);
+            this.panel8.Size = new System.Drawing.Size(738, 349);
             this.panel8.TabIndex = 1;
             // 
             // pnlTourPost
@@ -312,7 +312,7 @@
             this.pnlTourPost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTourPost.Location = new System.Drawing.Point(356, 0);
             this.pnlTourPost.Name = "pnlTourPost";
-            this.pnlTourPost.Size = new System.Drawing.Size(616, 322);
+            this.pnlTourPost.Size = new System.Drawing.Size(382, 349);
             this.pnlTourPost.TabIndex = 1;
             // 
             // pnlLocation
@@ -322,7 +322,7 @@
             this.pnlLocation.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLocation.Location = new System.Drawing.Point(0, 0);
             this.pnlLocation.Name = "pnlLocation";
-            this.pnlLocation.Size = new System.Drawing.Size(356, 322);
+            this.pnlLocation.Size = new System.Drawing.Size(356, 349);
             this.pnlLocation.TabIndex = 0;
             // 
             // fpnlTables
@@ -335,7 +335,7 @@
             this.fpnlTables.Dock = System.Windows.Forms.DockStyle.Top;
             this.fpnlTables.Location = new System.Drawing.Point(0, 0);
             this.fpnlTables.Name = "fpnlTables";
-            this.fpnlTables.Size = new System.Drawing.Size(972, 232);
+            this.fpnlTables.Size = new System.Drawing.Size(738, 239);
             this.fpnlTables.TabIndex = 0;
             // 
             // pnlAddTable
@@ -364,212 +364,8 @@
             this.pnlAddTable.Location = new System.Drawing.Point(3, 3);
             this.pnlAddTable.Name = "pnlAddTable";
             this.pnlAddTable.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pnlAddTable.Size = new System.Drawing.Size(701, 223);
+            this.pnlAddTable.Size = new System.Drawing.Size(700, 230);
             this.pnlAddTable.TabIndex = 0;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.panel10.Location = new System.Drawing.Point(710, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(204, 223);
-            this.panel10.TabIndex = 1;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel11.Location = new System.Drawing.Point(3, 232);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(204, 204);
-            this.panel11.TabIndex = 1;
-            // 
-            // cbFacility
-            // 
-            this.cbFacility.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cbFacility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbFacility.Font = new System.Drawing.Font("VNI-Avo", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.cbFacility.ForeColor = System.Drawing.Color.Gold;
-            this.cbFacility.FormattingEnabled = true;
-            this.cbFacility.Location = new System.Drawing.Point(3, 3);
-            this.cbFacility.Name = "cbFacility";
-            this.cbFacility.Size = new System.Drawing.Size(201, 31);
-            this.cbFacility.TabIndex = 0;
-            this.cbFacility.SelectedIndexChanged += new System.EventHandler(this.cbFacility_SelectedIndexChanged);
-            // 
-            // nudTableNumber
-            // 
-            this.nudTableNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nudTableNumber.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.nudTableNumber.ForeColor = System.Drawing.Color.Gold;
-            this.nudTableNumber.Location = new System.Drawing.Point(3, 62);
-            this.nudTableNumber.Name = "nudTableNumber";
-            this.nudTableNumber.Size = new System.Drawing.Size(63, 29);
-            this.nudTableNumber.TabIndex = 1;
-            // 
-            // ckbPrivate
-            // 
-            this.ckbPrivate.AutoSize = true;
-            this.ckbPrivate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ckbPrivate.Font = new System.Drawing.Font("VNI-Avo", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ckbPrivate.ForeColor = System.Drawing.Color.Khaki;
-            this.ckbPrivate.Location = new System.Drawing.Point(548, 162);
-            this.ckbPrivate.Name = "ckbPrivate";
-            this.ckbPrivate.Size = new System.Drawing.Size(124, 23);
-            this.ckbPrivate.TabIndex = 2;
-            this.ckbPrivate.Text = "Private Table";
-            this.ckbPrivate.UseVisualStyleBackColor = false;
-            this.ckbPrivate.CheckedChanged += new System.EventHandler(this.ckbPrivate_CheckedChanged);
-            // 
-            // txtPrivateKey
-            // 
-            this.txtPrivateKey.BackColor = System.Drawing.Color.Black;
-            this.txtPrivateKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrivateKey.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtPrivateKey.ForeColor = System.Drawing.Color.Gold;
-            this.txtPrivateKey.Location = new System.Drawing.Point(548, 191);
-            this.txtPrivateKey.Name = "txtPrivateKey";
-            this.txtPrivateKey.Size = new System.Drawing.Size(150, 29);
-            this.txtPrivateKey.TabIndex = 3;
-            this.txtPrivateKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPrivateKey.Visible = false;
-            // 
-            // nudDayOfDate
-            // 
-            this.nudDayOfDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nudDayOfDate.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.nudDayOfDate.ForeColor = System.Drawing.Color.Gold;
-            this.nudDayOfDate.Location = new System.Drawing.Point(3, 121);
-            this.nudDayOfDate.Name = "nudDayOfDate";
-            this.nudDayOfDate.Size = new System.Drawing.Size(63, 29);
-            this.nudDayOfDate.TabIndex = 4;
-            // 
-            // nudMonthOfDate
-            // 
-            this.nudMonthOfDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nudMonthOfDate.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.nudMonthOfDate.ForeColor = System.Drawing.Color.Gold;
-            this.nudMonthOfDate.Location = new System.Drawing.Point(72, 121);
-            this.nudMonthOfDate.Name = "nudMonthOfDate";
-            this.nudMonthOfDate.Size = new System.Drawing.Size(61, 29);
-            this.nudMonthOfDate.TabIndex = 5;
-            // 
-            // nudMinuteOfTime
-            // 
-            this.nudMinuteOfTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nudMinuteOfTime.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.nudMinuteOfTime.ForeColor = System.Drawing.Color.Gold;
-            this.nudMinuteOfTime.Location = new System.Drawing.Point(72, 170);
-            this.nudMinuteOfTime.Name = "nudMinuteOfTime";
-            this.nudMinuteOfTime.Size = new System.Drawing.Size(61, 29);
-            this.nudMinuteOfTime.TabIndex = 6;
-            // 
-            // nudHourOfTime
-            // 
-            this.nudHourOfTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nudHourOfTime.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.nudHourOfTime.ForeColor = System.Drawing.Color.Gold;
-            this.nudHourOfTime.Location = new System.Drawing.Point(3, 170);
-            this.nudHourOfTime.Name = "nudHourOfTime";
-            this.nudHourOfTime.Size = new System.Drawing.Size(63, 29);
-            this.nudHourOfTime.TabIndex = 7;
-            // 
-            // cbGameType
-            // 
-            this.cbGameType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cbGameType.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.cbGameType.ForeColor = System.Drawing.Color.Gold;
-            this.cbGameType.FormattingEnabled = true;
-            this.cbGameType.Location = new System.Drawing.Point(504, 3);
-            this.cbGameType.Name = "cbGameType";
-            this.cbGameType.Size = new System.Drawing.Size(194, 30);
-            this.cbGameType.TabIndex = 8;
-            // 
-            // cbGameRules
-            // 
-            this.cbGameRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cbGameRules.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.cbGameRules.ForeColor = System.Drawing.Color.Gold;
-            this.cbGameRules.FormattingEnabled = true;
-            this.cbGameRules.Location = new System.Drawing.Point(504, 53);
-            this.cbGameRules.Name = "cbGameRules";
-            this.cbGameRules.Size = new System.Drawing.Size(194, 30);
-            this.cbGameRules.TabIndex = 9;
-            // 
-            // nudPlayerLimit
-            // 
-            this.nudPlayerLimit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nudPlayerLimit.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.nudPlayerLimit.ForeColor = System.Drawing.Color.Gold;
-            this.nudPlayerLimit.Location = new System.Drawing.Point(640, 121);
-            this.nudPlayerLimit.Name = "nudPlayerLimit";
-            this.nudPlayerLimit.Size = new System.Drawing.Size(58, 29);
-            this.nudPlayerLimit.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label1.Location = new System.Drawing.Point(72, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 17);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Table Number";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label2.Location = new System.Drawing.Point(139, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 17);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Date";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label3.Location = new System.Drawing.Point(139, 182);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 17);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Time";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label4.Location = new System.Drawing.Point(476, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 17);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Game Type";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label5.Location = new System.Drawing.Point(476, 86);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 17);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Game Rules";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label6.Location = new System.Drawing.Point(584, 133);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 17);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Players";
             // 
             // btnCreateTable
             // 
@@ -587,14 +383,240 @@
             this.btnCreateTable.UseVisualStyleBackColor = false;
             this.btnCreateTable.Click += new System.EventHandler(this.btnCreateTable_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label5.Location = new System.Drawing.Point(476, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 17);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Game Rules";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label4.Location = new System.Drawing.Point(476, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 17);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Game Type";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label3.Location = new System.Drawing.Point(139, 182);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 17);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Time";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label6.Location = new System.Drawing.Point(573, 133);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 17);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Players";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label2.Location = new System.Drawing.Point(139, 133);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Date";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label1.Location = new System.Drawing.Point(72, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Table Number";
+            // 
+            // nudPlayerLimit
+            // 
+            this.nudPlayerLimit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nudPlayerLimit.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.nudPlayerLimit.ForeColor = System.Drawing.Color.Gold;
+            this.nudPlayerLimit.Location = new System.Drawing.Point(629, 121);
+            this.nudPlayerLimit.Name = "nudPlayerLimit";
+            this.nudPlayerLimit.Size = new System.Drawing.Size(58, 29);
+            this.nudPlayerLimit.TabIndex = 10;
+            // 
+            // cbGameRules
+            // 
+            this.cbGameRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbGameRules.DropDownWidth = 400;
+            this.cbGameRules.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.cbGameRules.ForeColor = System.Drawing.Color.Gold;
+            this.cbGameRules.FormattingEnabled = true;
+            this.cbGameRules.Items.AddRange(new object[] {
+            "FunTime - No Rules applied ",
+            "Stardard-Even Split of Bill",
+            "MeetAndGreet - 60/40 Split Of Bill",
+            "Compete - 70/30 Split Of Bill",
+            "FriendlyMatch - Loser Pays",
+            "Race to 11",
+            "Race to 10 ",
+            "Race to 7 ",
+            "BO5",
+            "BO7"});
+            this.cbGameRules.Location = new System.Drawing.Point(504, 53);
+            this.cbGameRules.MaxDropDownItems = 12;
+            this.cbGameRules.Name = "cbGameRules";
+            this.cbGameRules.Size = new System.Drawing.Size(194, 30);
+            this.cbGameRules.TabIndex = 9;
+            // 
+            // cbGameType
+            // 
+            this.cbGameType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbGameType.DropDownWidth = 400;
+            this.cbGameType.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.cbGameType.ForeColor = System.Drawing.Color.Gold;
+            this.cbGameType.FormattingEnabled = true;
+            this.cbGameType.Items.AddRange(new object[] {
+            "9Ball",
+            "8Ball-Classic",
+            "10Ball",
+            "DealtByCard-Locally Popular",
+            "53Points",
+            "Debt9Ball"});
+            this.cbGameType.Location = new System.Drawing.Point(504, 3);
+            this.cbGameType.MaxDropDownItems = 30;
+            this.cbGameType.Name = "cbGameType";
+            this.cbGameType.Size = new System.Drawing.Size(194, 30);
+            this.cbGameType.TabIndex = 8;
+            // 
+            // nudHourOfTime
+            // 
+            this.nudHourOfTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nudHourOfTime.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.nudHourOfTime.ForeColor = System.Drawing.Color.Gold;
+            this.nudHourOfTime.Location = new System.Drawing.Point(3, 170);
+            this.nudHourOfTime.Name = "nudHourOfTime";
+            this.nudHourOfTime.Size = new System.Drawing.Size(63, 29);
+            this.nudHourOfTime.TabIndex = 7;
+            // 
+            // nudMinuteOfTime
+            // 
+            this.nudMinuteOfTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nudMinuteOfTime.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.nudMinuteOfTime.ForeColor = System.Drawing.Color.Gold;
+            this.nudMinuteOfTime.Location = new System.Drawing.Point(72, 170);
+            this.nudMinuteOfTime.Name = "nudMinuteOfTime";
+            this.nudMinuteOfTime.Size = new System.Drawing.Size(61, 29);
+            this.nudMinuteOfTime.TabIndex = 6;
+            // 
+            // nudMonthOfDate
+            // 
+            this.nudMonthOfDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nudMonthOfDate.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.nudMonthOfDate.ForeColor = System.Drawing.Color.Gold;
+            this.nudMonthOfDate.Location = new System.Drawing.Point(72, 121);
+            this.nudMonthOfDate.Name = "nudMonthOfDate";
+            this.nudMonthOfDate.Size = new System.Drawing.Size(61, 29);
+            this.nudMonthOfDate.TabIndex = 5;
+            // 
+            // nudDayOfDate
+            // 
+            this.nudDayOfDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nudDayOfDate.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.nudDayOfDate.ForeColor = System.Drawing.Color.Gold;
+            this.nudDayOfDate.Location = new System.Drawing.Point(3, 121);
+            this.nudDayOfDate.Name = "nudDayOfDate";
+            this.nudDayOfDate.Size = new System.Drawing.Size(63, 29);
+            this.nudDayOfDate.TabIndex = 4;
+            // 
+            // txtPrivateKey
+            // 
+            this.txtPrivateKey.BackColor = System.Drawing.Color.Black;
+            this.txtPrivateKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPrivateKey.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.txtPrivateKey.ForeColor = System.Drawing.Color.Gold;
+            this.txtPrivateKey.Location = new System.Drawing.Point(537, 194);
+            this.txtPrivateKey.Name = "txtPrivateKey";
+            this.txtPrivateKey.Size = new System.Drawing.Size(150, 29);
+            this.txtPrivateKey.TabIndex = 3;
+            this.txtPrivateKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPrivateKey.Visible = false;
+            // 
+            // ckbPrivate
+            // 
+            this.ckbPrivate.AutoSize = true;
+            this.ckbPrivate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ckbPrivate.Font = new System.Drawing.Font("VNI-Avo", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ckbPrivate.ForeColor = System.Drawing.Color.Khaki;
+            this.ckbPrivate.Location = new System.Drawing.Point(537, 165);
+            this.ckbPrivate.Name = "ckbPrivate";
+            this.ckbPrivate.Size = new System.Drawing.Size(124, 23);
+            this.ckbPrivate.TabIndex = 2;
+            this.ckbPrivate.Text = "Private Table";
+            this.ckbPrivate.UseVisualStyleBackColor = false;
+            this.ckbPrivate.CheckedChanged += new System.EventHandler(this.ckbPrivate_CheckedChanged);
+            // 
+            // nudTableNumber
+            // 
+            this.nudTableNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nudTableNumber.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.nudTableNumber.ForeColor = System.Drawing.Color.Gold;
+            this.nudTableNumber.Location = new System.Drawing.Point(3, 62);
+            this.nudTableNumber.Name = "nudTableNumber";
+            this.nudTableNumber.Size = new System.Drawing.Size(63, 29);
+            this.nudTableNumber.TabIndex = 1;
+            // 
+            // cbFacility
+            // 
+            this.cbFacility.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbFacility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbFacility.Font = new System.Drawing.Font("VNI-Avo", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.cbFacility.ForeColor = System.Drawing.Color.Gold;
+            this.cbFacility.FormattingEnabled = true;
+            this.cbFacility.Location = new System.Drawing.Point(3, 3);
+            this.cbFacility.Name = "cbFacility";
+            this.cbFacility.Size = new System.Drawing.Size(201, 31);
+            this.cbFacility.TabIndex = 0;
+            this.cbFacility.SelectedIndexChanged += new System.EventHandler(this.cbFacility_SelectedIndexChanged);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel10.Location = new System.Drawing.Point(3, 239);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(350, 230);
+            this.panel10.TabIndex = 1;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel11.Location = new System.Drawing.Point(359, 239);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(350, 230);
+            this.panel11.TabIndex = 1;
+            // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1422, 554);
+            this.ClientSize = new System.Drawing.Size(1188, 588);
             this.Controls.Add(this.panel5);
             this.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MinimumSize = new System.Drawing.Size(1200, 600);
+            this.MinimumSize = new System.Drawing.Size(1210, 600);
             this.Name = "frmUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User";
@@ -614,12 +636,12 @@
             this.fpnlTables.ResumeLayout(false);
             this.pnlAddTable.ResumeLayout(false);
             this.pnlAddTable.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTableNumber)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDayOfDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMonthOfDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinuteOfTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHourOfTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerLimit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHourOfTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinuteOfTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMonthOfDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDayOfDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTableNumber)).EndInit();
             this.ResumeLayout(false);
 
         }
