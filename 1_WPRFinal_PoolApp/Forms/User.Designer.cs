@@ -255,6 +255,7 @@
             this.btnTournament.TabIndex = 2;
             this.btnTournament.Text = "Tournament";
             this.btnTournament.UseVisualStyleBackColor = true;
+            this.btnTournament.Click += new System.EventHandler(this.btnTournament_Click);
             // 
             // panel4
             // 

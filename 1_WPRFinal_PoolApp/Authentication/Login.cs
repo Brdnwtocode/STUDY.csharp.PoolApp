@@ -147,7 +147,7 @@ namespace _1_WPRFinal_PoolApp.Authentication
                     this.Hide();
                     //user.Admin();
                     Data.init(AccID);
-                    Data.AccID = AccID;
+                   
                     frmUser.ShowDialog();
                     
                 }
@@ -163,7 +163,9 @@ namespace _1_WPRFinal_PoolApp.Authentication
                     // Set the HR ID in the static 
                     //HRsession.SetHRId(int.Parse(loginResult.Role));
                     frmBusiness hrForm = new frmBusiness();
-                    this.Hide();
+                    this.Hide(); 
+                    Data.AccID = AccID;
+                    Data.init(AccID);
                     hrForm.ShowDialog();
                 }
 

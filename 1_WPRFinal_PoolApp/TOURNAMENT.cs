@@ -24,6 +24,56 @@ namespace _1_WPRFinal_PoolApp
 
         public TOURNAMENT() { }
 
+
+        public void InsertTournament(TOURNAMENT tournament)
+        {
+            string query = @"INSERT INTO Tournament (TournamentID, TournamentName, Organizer, Location, DateStart, DateEnd, Description, NumberOfPlayers, PlayersNow, WinnerID, WinnerName, Image) 
+                     VALUES (@TournamentID, @TournamentName, @Organizer, @Location, @DateStart, @DateEnd, @Description, @NumberOfPlayers, @PlayersNow, @WinnerID, @WinnerName, @Image)";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Fn.Con()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@TournamentID", tournament.TournamentID);
+                        command.Parameters.AddWithValue("@TournamentName", tournament.TournamentName);
+                        command.Parameters.AddWithValue("@Organizer", tournament.Organizer);
+                        command.Parameters.AddWithValue("@Location", tournament.Location);
+                        command.Parameters.AddWithValue("@DateStart", tournament.DateStart);
+                        command.Parameters.AddWithValue("@DateEnd", tournament.DateEnd);
+                        command.Parameters.AddWithValue("@Description", tournament.Description);
+                        command.Parameters.AddWithValue("@NumberOfPlayers", tournament.NumberOfPlayers);
+                        command.Parameters.AddWithValue("@PlayersNow", tournament.PlayersNow);
+                        command.Parameters.AddWithValue("@WinnerID", tournament.WinnerID);
+                        command.Parameters.AddWithValue("@WinnerName", tournament.WinnerName);
+
+                        // Convert Image to byte array
+                        byte[] imageBytes = ImageToByteArray(tournament.image);
+                        command.Parameters.AddWithValue("@Image", imageBytes);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error inserting tournament: " + ex.Message);
+            }
+        }
+
+        // Helper method to convert Image to byte array
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png); // Change ImageFormat as per your image type
+                return ms.ToArray();
+            }
+        }
+
+
         public static List<TOURNAMENT> LoadTournamentsFromDatabase()
         {
             List<TOURNAMENT> tournaments = new List<TOURNAMENT>();

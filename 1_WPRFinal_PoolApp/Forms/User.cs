@@ -243,5 +243,10 @@ namespace _1_WPRFinal_PoolApp.Forms
             frm.ShowDialog();
             this.Show();
         }
+
+        private void btnTournament_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
