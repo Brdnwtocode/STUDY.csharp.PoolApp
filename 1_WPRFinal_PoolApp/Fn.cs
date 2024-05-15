@@ -31,6 +31,7 @@ namespace _1_WPRFinal_PoolApp
         public static List<TABLE> myTables;
         public static void init(int UserID)
         {
+            AccID = UserID;
             BUSINESSes = BUSINESS.LoadBusninessFromDatabase("SELECT * FROM Business");
             USERs = USER.LoadUsersFromDatabase("SELECT * FROM Users");
             facilities = Facility.LoadFacilitiesFromDatabase();

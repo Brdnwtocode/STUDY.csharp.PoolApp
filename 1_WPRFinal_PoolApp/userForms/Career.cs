@@ -85,9 +85,9 @@ namespace _1_WPRFinal_PoolApp.userForms
         {
             FillDataGridViewWithMatchResults(dataGridView1, Data.AccID);
             USER user = Data.USERs.FirstOrDefault(u => u.ID == Data.AccID);
-            lblMatches.Text = "Match played: "+user.Matches + "";
-            lblWinrate.Text = "Winrate: "+ user.Winrate + "";
-            lblRank.Text ="Rank: "+ user.Rank;
+            lblMatches.Text = "Match played: " + user.Matches + "";
+            lblWinrate.Text = "Winrate: " + user.Winrate + "";
+            lblRank.Text = "Rank: " + user.Rank;
         }
 
 
