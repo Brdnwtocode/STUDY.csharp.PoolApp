@@ -10,6 +10,7 @@ namespace _1_WPRFinal_PoolApp
     public class TOURNAMENT
     {
         public string TournamentID { get; set; }
+        public int UID { get; set; }
         public string TournamentName { get; set; }
         public string Organizer { get; set; }
         public string Location { get; set; }
@@ -27,8 +28,8 @@ namespace _1_WPRFinal_PoolApp
 
         public void InsertTournament(TOURNAMENT tournament)
         {
-            string query = @"INSERT INTO Tournament (TournamentID, TournamentName, Organizer, Location, DateStart, DateEnd, Description, NumberOfPlayers, PlayersNow, WinnerID, WinnerName, Image) 
-                     VALUES (@TournamentID, @TournamentName, @Organizer, @Location, @DateStart, @DateEnd, @Description, @NumberOfPlayers, @PlayersNow, @WinnerID, @WinnerName, @Image)";
+            string query = @"INSERT INTO Tournament (TournamentID,UID, TournamentName, Organizer, Location, DateStart, DateEnd, Description, NumberOfPlayers, PlayersNow, WinnerID, WinnerName, Image) 
+                     VALUES (@TournamentID,@UID, @TournamentName, @Organizer, @Location, @DateStart, @DateEnd, @Description, @NumberOfPlayers, @PlayersNow, @WinnerID, @WinnerName, @Image)";
 
             try
             {
@@ -37,6 +38,7 @@ namespace _1_WPRFinal_PoolApp
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@TournamentID", tournament.TournamentID);
+                        command.Parameters.AddWithValue("@UID", tournament.UID);
                         command.Parameters.AddWithValue("@TournamentName", tournament.TournamentName);
                         command.Parameters.AddWithValue("@Organizer", tournament.Organizer);
                         command.Parameters.AddWithValue("@Location", tournament.Location);
@@ -90,6 +92,7 @@ namespace _1_WPRFinal_PoolApp
                             TOURNAMENT tournament = new TOURNAMENT
                             {
                                 TournamentID = reader["TournamentID"].ToString(),
+                                UID  = (int)reader["UID"],
                                 TournamentName = reader["TournamentName"].ToString(),
                                 Organizer = reader["Organizer"].ToString(),
                                 Location = reader["Location"].ToString(),

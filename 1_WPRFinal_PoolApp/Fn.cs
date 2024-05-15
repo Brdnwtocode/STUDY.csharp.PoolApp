@@ -23,6 +23,7 @@ namespace _1_WPRFinal_PoolApp
         public static int AccID { get; set; }
 
         public static List<USER> USERs;
+        public static List<BUSINESS> BUSINESSes;
         public static List<Facility> facilities;
         public static List<TOURNAMENT> TOURNAMENTs;
         public static List<TOURNAMENT> myTournaments;
@@ -30,6 +31,7 @@ namespace _1_WPRFinal_PoolApp
         public static List<TABLE> myTables;
         public static void init(int UserID)
         {
+            BUSINESSes = BUSINESS.LoadBusninessFromDatabase("SELECT * FROM Business");
             USERs = USER.LoadUsersFromDatabase("SELECT * FROM Users");
             facilities = Facility.LoadFacilitiesFromDatabase();
             TOURNAMENTs = TOURNAMENT.LoadTournamentsFromDatabase();
