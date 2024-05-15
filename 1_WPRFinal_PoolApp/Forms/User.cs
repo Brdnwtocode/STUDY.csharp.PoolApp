@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1_WPRFinal_PoolApp.userForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -233,6 +234,14 @@ namespace _1_WPRFinal_PoolApp.Forms
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRank_Click(object sender, EventArgs e)
+        {
+            frmCareer frm = new frmCareer();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
         }
     }
 }

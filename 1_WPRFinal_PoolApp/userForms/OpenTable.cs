@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace _1_WPRFinal_PoolApp.userForms
 {
@@ -42,7 +43,7 @@ namespace _1_WPRFinal_PoolApp.userForms
             lblTime.Text = table.Time;
             lblRules.Text = table.GameRules;
             lblType.Text = table.GameType;
-            lblTableNumber.Text += table.TableNumber;
+            lblTableNumber.Text = table.TableNumber+"";
             lblStatus.Text += table.Status;
 
             USER user = Data.USERs.FirstOrDefault(u => u.ID == table.UID); // Assuming userID is the ID of the user
@@ -54,6 +55,8 @@ namespace _1_WPRFinal_PoolApp.userForms
                     pictureBox1.BackgroundImage = (Image)resizedImage.Clone(); // Set the resized image as the background
                 }
             }
+            else pictureBox1.Image =  Image.FromFile(@"D:\SCHOOL\Year2\WPR\1_WPRFinal_PoolApp\1_WPRFinal_PoolApp\Icons\snooker.png");
+            
 
             // Set background image of the form to the facility's picture
             Facility facility = Data.facilities.FirstOrDefault(f => f.ID == table.FacilityID); // Assuming facilityID is the ID of the facility

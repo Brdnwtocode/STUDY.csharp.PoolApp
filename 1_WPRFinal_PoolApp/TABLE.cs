@@ -1,12 +1,5 @@
-﻿using _1_WPRFinal_PoolApp.Forms;
-using _1_WPRFinal_PoolApp.userForms;
-using System;
-using System.Collections.Generic;
+﻿using _1_WPRFinal_PoolApp.userForms;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _1_WPRFinal_PoolApp
 {
@@ -236,6 +229,243 @@ namespace _1_WPRFinal_PoolApp
 
                     // Add the panel to the flow panel
                     fpnlTables.Controls.Add(tablePanel);
+                }
+            }
+
+        }
+        public static void GenerateTablePanels(FlowLayoutPanel fpnlTables)
+        {
+            // Clear existing panels from the flow panel
+            fpnlTables.Controls.Clear();
+            Image background1A = Image.FromFile(@"D:\SCHOOL\Year2\WPR\1_WPRFinal_PoolApp\1_WPRFinal_PoolApp\Icons\ball (1).png");
+            Image background2B = Image.FromFile(@"D:\SCHOOL\Year2\WPR\1_WPRFinal_PoolApp\1_WPRFinal_PoolApp\Icons\balls.png");
+
+            // Iterate over each table in Data.TABLEs
+            foreach (TABLE table in Data.TABLEs)
+            {
+                // Check if the table UID matches the Data.AccID
+                if (table.UID == Data.AccID)
+                {
+                    // Create a new panel for the table
+                    Panel tablePanel = new Panel();
+                    tablePanel.BackgroundImage = background1A;
+                    tablePanel.BackgroundImageLayout = ImageLayout.Tile;
+                    tablePanel.BorderStyle = BorderStyle.FixedSingle;
+                    tablePanel.Padding = new Padding(10);
+                    tablePanel.Width = 550;
+                    tablePanel.Height = 500;
+                    tablePanel.AutoScroll = true;
+                    if (fpnlTables.Name == "fpnlMyTables")
+                    {
+                        tablePanel.BackColor = Color.RoyalBlue;
+                        if (table.Status == "Closed") tablePanel.BackColor = Color.LightGray;
+                    }
+                    else tablePanel.BackColor = Color.LightGray;
+                    // Add Button with dynamically generated function call
+                    if (fpnlTables.Name == "fpnlClosedTable")
+                    {
+                        tablePanel.BackgroundImage = background2B;
+
+                        TextBox textbox = new TextBox();
+                        textbox.BorderStyle = BorderStyle.None;
+                        textbox.Multiline = true;
+                        textbox.Dock = DockStyle.Bottom;
+                        tablePanel.Controls.Add(textbox);
+
+                        Button button = new Button();
+                        button.Text = "Save Result";
+                        button.AutoSize = true;
+                        button.Dock = DockStyle.Top;
+                       
+                        tablePanel.Controls.Add(button);
+                        button.Padding = new Padding(10);
+
+                        RadioButton user1WinsRadioButton = new RadioButton();
+                        user1WinsRadioButton.Text = "You Wins";
+                        user1WinsRadioButton.AutoSize = true;
+                        user1WinsRadioButton.Dock = DockStyle.Left;
+                        tablePanel.Controls.Add(user1WinsRadioButton);
+
+                        // Add RadioButton for selecting user 2 as winner
+                        RadioButton user2WinsRadioButton = new RadioButton();
+                        user2WinsRadioButton.Text = "Guest Wins";
+                        user2WinsRadioButton.AutoSize = true;
+                        user2WinsRadioButton.Dock = DockStyle.Right;
+                        tablePanel.Controls.Add(user2WinsRadioButton);
+
+                        if (table.Status == "Saved")
+                        {
+                            tablePanel.BackColor = Color.DarkGray;
+                            button.Visible = false;
+                            textbox.Visible = false;
+                            user1WinsRadioButton.Visible = false;
+                            user2WinsRadioButton.Visible = false;
+                        }
+                        button.Click += (sender, e) =>
+                        {
+                            InsertMatchResult(table, textbox.Text, user1WinsRadioButton.Checked);
+                            tablePanel.BackColor = Color.DarkGray;
+                            button.Visible = false;
+                            textbox.Visible = false;
+                            user1WinsRadioButton.Visible = false;
+                            user2WinsRadioButton.Visible = false;
+                        };// Replace MyFunction with your actual function
+                    }
+
+                    // Add RichTextBox for Location
+                    RichTextBox locationBox = new RichTextBox();
+                    locationBox.Text = "Location: " + table.Location;
+                    locationBox.ReadOnly = true;
+                    locationBox.WordWrap = true;
+                    locationBox.BorderStyle = BorderStyle.None;
+                    locationBox.AutoSize = true;
+                    locationBox.Dock = DockStyle.Top;
+                    tablePanel.Controls.Add(locationBox);
+                    locationBox.Padding = new Padding(5);
+
+                    // Add Label for TableNumber
+                    Label tableNumberLabel = new Label();
+                    tableNumberLabel.Text = "Table Number: " + table.TableNumber;
+                    tableNumberLabel.AutoSize = true;
+                    tableNumberLabel.Dock = DockStyle.Top;
+                    tablePanel.Controls.Add(tableNumberLabel);
+                    tableNumberLabel.Padding = new Padding(5);
+
+                    // Add Label for Status
+                    if (fpnlTables.Name != "fpnlMyTables")
+                    {
+                        Label statusLabel = new Label();
+                        statusLabel.Text = "Status: " + table.Status;
+                        statusLabel.TextAlign = ContentAlignment.MiddleRight;
+                        statusLabel.AutoSize = true;
+                        statusLabel.Dock = DockStyle.Top;
+                        tablePanel.Controls.Add(statusLabel);
+                        statusLabel.Padding = new Padding(5);
+                    }
+                    // Add Label for UID (User ID)
+                    Label uidLabel = new Label();
+                    uidLabel.Text = "Me: " + USER.GetUserNameFromID(table.UID);
+                    uidLabel.AutoSize = true;
+                    uidLabel.Dock = DockStyle.Top;
+                    tablePanel.Controls.Add(uidLabel);
+                    uidLabel.Padding = new Padding(5);
+
+                    // Add Label for OID (Opponent ID) if not null
+                    if (table.OID != 0)
+                    {
+                        Label oidLabel = new Label();
+                        oidLabel.Text = "Guest: "+ USER.GetUserNameFromID(table.OID);
+                        oidLabel.AutoSize = true;
+                        oidLabel.Dock = DockStyle.Top;
+                        tablePanel.Controls.Add(oidLabel);
+                    }
+                    
+                    // Add Label for TableID
+                    Label tableIDLabel = new Label();
+                    tableIDLabel.Text = "" + Facility.GetFacilityNameFromID(table.FacilityID);
+                    tableIDLabel.AutoSize = true;
+                    tableIDLabel.Dock = DockStyle.Top;
+                    tablePanel.Controls.Add(tableIDLabel);
+                    tableIDLabel.Padding = new Padding(10);
+
+
+                    // Add the table panel to the flow panel
+                    if (fpnlTables.Name == "fpnlClosedTable" && table.Status != "Open" || fpnlTables.Name == "fpnlMyTables")
+                        fpnlTables.Controls.Add(tablePanel);
+                }
+            }
+        }
+
+        // -- function to be called when the button is clicked
+        public static void InsertMatchResult(TABLE table, string score, bool win)
+        {
+            string query = @"INSERT INTO MatchResults (MatchID, UserID1, UserID2, WinnerID, Score, Player1Name,
+                        Player2Name, WinnerName, Facility, MatchDate)
+                        VALUES (@MatchID, @UserID1, @UserID2, @WinnerID, @Score, @Player1Name,
+                        @Player2Name, @WinnerName, @Facility, @MatchDate)";
+            int winnerID;
+            string winnerName;
+            string ID = table.UID + DateTime.Now.ToString() + "";
+            if (win)
+            {
+                winnerID = table.UID;
+            }
+            else
+            {
+                winnerID = table.OID;
+            }
+
+            winnerName = USER.GetUserNameFromID(winnerID);
+            try
+            {
+
+
+                using (SqlConnection connection = new SqlConnection(Fn.Con()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MatchID", ID);
+                        command.Parameters.AddWithValue("@UserID1", table.UID);
+                        command.Parameters.AddWithValue("@UserID2", table.OID);
+                        command.Parameters.AddWithValue("@WinnerID", winnerID);
+                        command.Parameters.AddWithValue("@Score", score);
+                        command.Parameters.AddWithValue("@Player1Name", USER.GetUserNameFromID(table.UID));
+                        command.Parameters.AddWithValue("@Player2Name", USER.GetUserNameFromID(table.OID));
+                        command.Parameters.AddWithValue("@WinnerName", winnerName);
+                        command.Parameters.AddWithValue("@Facility", Facility.GetFacilityNameFromID(table.FacilityID));
+                        command.Parameters.AddWithValue("@MatchDate", table.DATE.Date.ToString("dd-MM-yyyy"));
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Match result inserted successfully.");
+                string message = TABLE.UpdateTableStatus(table.TableID);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error inserting match result: {ex.Message}");
+            }
+        }
+
+        public static string UpdateTableStatus(int tableID)
+        {
+            string query = "UPDATE Tables SET Status = 'Saved' WHERE TableID = @TableID";
+
+            // Create connection and command objects
+            using (SqlConnection connection = new SqlConnection(Fn.Con()))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Add parameters to the command
+                    command.Parameters.AddWithValue("@TableID", tableID);
+
+                    try
+                    {
+                        // Open the connection
+                        connection.Open();
+                        // Execute the update query
+                        int rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            TABLE updatedTable = Data.TABLEs.FirstOrDefault(t => t.TableID == tableID);
+                            if (updatedTable != null)
+                            {
+                                updatedTable.Status = "Saved";
+                            }
+                            return "Opponent ID added to table successfully.";
+                        }
+                        else
+                        {
+                            return "Table with specified ID not found.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        return "Error adding opponent ID to table: " + ex.Message;
+                    }
                 }
             }
 

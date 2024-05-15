@@ -79,7 +79,7 @@ namespace _1_WPRFinal_PoolApp
 
             // Width of the flow panel
             int panelWidth = 330;
-
+            Image backgroundImage = Image.FromFile(@"D:\SCHOOL\Year2\WPR\1_WPRFinal_PoolApp\1_WPRFinal_PoolApp\Icons\billiard (3).png");
             // Iterate over each facility in Data.facilities
             foreach (Facility facility in Data.facilities)
             {
@@ -104,10 +104,14 @@ namespace _1_WPRFinal_PoolApp
                 facilityPanel.Width = panelWidth;
                 facilityPanel.AutoSize = true;
 
+                // Set background image
+                facilityPanel.BackgroundImageLayout = ImageLayout.Tile;
+                facilityPanel.BackgroundImage = backgroundImage;
+
                 // Add PictureBox for facility image
                 PictureBox pictureBox = new PictureBox();
                 pictureBox.Image = facility.image;
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
                 pictureBox.Size = new Size(100, 100); // Adjust size as needed
                 pictureBox.Location = new Point(10, 10);
                 facilityPanel.Controls.Add(pictureBox);

@@ -229,6 +229,7 @@
             this.btnRank.TabIndex = 0;
             this.btnRank.Text = "Career";
             this.btnRank.UseVisualStyleBackColor = true;
+            this.btnRank.Click += new System.EventHandler(this.btnRank_Click);
             // 
             // panel2
             // 
@@ -336,6 +337,8 @@
             // 
             this.fpnlLocation.AutoScroll = true;
             this.fpnlLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpnlLocation.Font = new System.Drawing.Font("VNI-Avo", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.fpnlLocation.ForeColor = System.Drawing.Color.Gold;
             this.fpnlLocation.Location = new System.Drawing.Point(0, 0);
             this.fpnlLocation.Name = "fpnlLocation";
             this.fpnlLocation.Size = new System.Drawing.Size(369, 392);
