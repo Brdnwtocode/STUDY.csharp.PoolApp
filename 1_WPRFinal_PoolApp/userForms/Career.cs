@@ -25,7 +25,7 @@ namespace _1_WPRFinal_PoolApp.userForms
         // -- Fill datagridview --
         public static void FillDataGridViewWithMatchResults(DataGridView dataGridView1, int userID)
         {
-            string query = @"SELECT * FROM MatchResults WHERE UserID1 = @UserID OR UserID2 = @UserID";
+            string query = @"SELECT Player1Name,Score,Player2Name, WinnerName, MatchDate, Facility, WinnerID FROM MatchResults WHERE UserID1 = @UserID OR UserID2 = @UserID";
 
             try
             {
@@ -45,6 +45,8 @@ namespace _1_WPRFinal_PoolApp.userForms
 
                         // Bind the DataTable to the DataGridView
                         dataGridView1.DataSource = dataTable;
+
+                       
                         // Calculate winrate and matches
                         int matches = dataTable.Rows.Count;
                         int wins = 0;
@@ -58,7 +60,7 @@ namespace _1_WPRFinal_PoolApp.userForms
                                 wins++;
                             }
                         }
-
+                        dataGridView1.Columns[6].Visible = false;
                         float winrate = (matches > 0) ? (float)wins / matches : 0f;
 
                         // Update user's winrate and matches

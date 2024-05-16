@@ -139,7 +139,7 @@ namespace _1_WPRFinal_PoolApp.Authentication
                 return;
             }
             email = mail;
-             password = txtPass.Text;
+             password = Fn.encrypt(txtPass.Text);
             type = "Business";
             pnlInfo.Visible = true;
             pnlPicture.Visible = true;
@@ -187,8 +187,11 @@ namespace _1_WPRFinal_PoolApp.Authentication
             int userID = ID; // Assuming txtID contains the user ID obtained from sign up
 
             var Result = Fn.ValidateInput(firstName, lastName, gender, dob, phone);
-            if (!Result.isValid) return;
-            
+            if (!Result.isValid)
+            {
+                MessageBox.Show(Result.errorMessage);
+                return;
+            }
             // Convert PictureBox image to byte array
             byte[] picture = null;
             if (pictureBox1.Image != null)
@@ -199,18 +202,30 @@ namespace _1_WPRFinal_PoolApp.Authentication
             // Insert into respective table based on type
             if (type == "User")
             {
+                InsertAccount(email, password, type);
+
                 USER user = new USER();
                 user.InsertUser(firstName, lastName, gender, dob, phone, email, userID, picture);
             }
             else if (type == "Business")
             {
                 BUSINESS bUSINESS = new BUSINESS();
-
-                bUSINESS.InsertBusiness(firstName, lastName, gender, dob, phone, email, userID, picture);
                 InsertAccount(email, password, type);
+                bUSINESS.InsertBusiness(firstName, lastName, gender, dob, phone, email, userID, picture);
+                
             }
 
-            MessageBox.Show(Result.errorMessage + "Register Completed!");
+            MessageBox.Show(Result.errorMessage + ". Register Completed!");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

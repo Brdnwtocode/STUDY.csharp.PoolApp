@@ -48,9 +48,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pnlTourPost = new System.Windows.Forms.Panel();
-            this.pnlLocation = new System.Windows.Forms.Panel();
-            this.fpnlLocation = new System.Windows.Forms.FlowLayoutPanel();
-            this.fpnlTables = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlAddTable = new System.Windows.Forms.Panel();
             this.btnCreateTable = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,6 +67,10 @@
             this.ckbPrivate = new System.Windows.Forms.CheckBox();
             this.nudTableNumber = new System.Windows.Forms.NumericUpDown();
             this.cbFacility = new System.Windows.Forms.ComboBox();
+            this.fpnlNew = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlLocation = new System.Windows.Forms.Panel();
+            this.fpnlLocation = new System.Windows.Forms.FlowLayoutPanel();
+            this.fpnlTables = new System.Windows.Forms.FlowLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -85,8 +86,7 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.pnlLocation.SuspendLayout();
-            this.fpnlTables.SuspendLayout();
+            this.pnlTourPost.SuspendLayout();
             this.pnlAddTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerLimit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHourOfTime)).BeginInit();
@@ -94,6 +94,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMonthOfDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDayOfDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTableNumber)).BeginInit();
+            this.pnlLocation.SuspendLayout();
+            this.fpnlTables.SuspendLayout();
             this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,13 +109,14 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(450, 631);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(450, 752);
             this.flowLayoutPanel2.TabIndex = 4;
             this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.lblFavourite);
             this.panel1.Controls.Add(this.lblWinrate);
@@ -172,36 +175,36 @@
             // lblFavourite
             // 
             this.lblFavourite.AutoSize = true;
-            this.lblFavourite.BackColor = System.Drawing.Color.RoyalBlue;
-            this.lblFavourite.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblFavourite.BackColor = System.Drawing.Color.BlueViolet;
+            this.lblFavourite.Font = new System.Drawing.Font("VNI-Avo", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblFavourite.ForeColor = System.Drawing.Color.SpringGreen;
-            this.lblFavourite.Location = new System.Drawing.Point(286, 202);
+            this.lblFavourite.Location = new System.Drawing.Point(273, 201);
             this.lblFavourite.Name = "lblFavourite";
-            this.lblFavourite.Size = new System.Drawing.Size(93, 27);
+            this.lblFavourite.Size = new System.Drawing.Size(124, 35);
             this.lblFavourite.TabIndex = 5;
             this.lblFavourite.Text = "Favourite";
             // 
             // lblWinrate
             // 
             this.lblWinrate.AutoSize = true;
-            this.lblWinrate.BackColor = System.Drawing.Color.RoyalBlue;
-            this.lblWinrate.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblWinrate.BackColor = System.Drawing.Color.BlueViolet;
+            this.lblWinrate.Font = new System.Drawing.Font("VNI-Avo", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblWinrate.ForeColor = System.Drawing.Color.SpringGreen;
-            this.lblWinrate.Location = new System.Drawing.Point(147, 202);
+            this.lblWinrate.Location = new System.Drawing.Point(126, 201);
             this.lblWinrate.Name = "lblWinrate";
-            this.lblWinrate.Size = new System.Drawing.Size(83, 27);
+            this.lblWinrate.Size = new System.Drawing.Size(110, 35);
             this.lblWinrate.TabIndex = 3;
             this.lblWinrate.Text = "WinRate";
             // 
             // lblRank
             // 
             this.lblRank.AutoSize = true;
-            this.lblRank.BackColor = System.Drawing.Color.RoyalBlue;
-            this.lblRank.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblRank.BackColor = System.Drawing.Color.BlueViolet;
+            this.lblRank.Font = new System.Drawing.Font("VNI-Avo", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblRank.ForeColor = System.Drawing.Color.SpringGreen;
-            this.lblRank.Location = new System.Drawing.Point(26, 202);
+            this.lblRank.Location = new System.Drawing.Point(18, 201);
             this.lblRank.Name = "lblRank";
-            this.lblRank.Size = new System.Drawing.Size(65, 27);
+            this.lblRank.Size = new System.Drawing.Size(83, 35);
             this.lblRank.TabIndex = 2;
             this.lblRank.Text = "Rank ";
             // 
@@ -216,6 +219,8 @@
             // 
             // btnRank
             // 
+            this.btnRank.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnRank.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRank.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.btnRank.FlatAppearance.BorderSize = 0;
             this.btnRank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -228,7 +233,7 @@
             this.btnRank.Size = new System.Drawing.Size(407, 111);
             this.btnRank.TabIndex = 0;
             this.btnRank.Text = "Career";
-            this.btnRank.UseVisualStyleBackColor = true;
+            this.btnRank.UseVisualStyleBackColor = false;
             this.btnRank.Click += new System.EventHandler(this.btnRank_Click);
             // 
             // panel2
@@ -242,6 +247,7 @@
             // 
             // btnTournament
             // 
+            this.btnTournament.BackColor = System.Drawing.Color.Brown;
             this.btnTournament.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.btnTournament.FlatAppearance.BorderSize = 0;
             this.btnTournament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -254,7 +260,7 @@
             this.btnTournament.Size = new System.Drawing.Size(404, 117);
             this.btnTournament.TabIndex = 2;
             this.btnTournament.Text = "Tournament";
-            this.btnTournament.UseVisualStyleBackColor = true;
+            this.btnTournament.UseVisualStyleBackColor = false;
             this.btnTournament.Click += new System.EventHandler(this.btnTournament_Click);
             // 
             // panel4
@@ -268,6 +274,7 @@
             // 
             // btnFind
             // 
+            this.btnFind.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.btnFind.FlatAppearance.BorderSize = 0;
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -280,7 +287,7 @@
             this.btnFind.Size = new System.Drawing.Size(407, 114);
             this.btnFind.TabIndex = 0;
             this.btnFind.Text = "Find";
-            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.UseVisualStyleBackColor = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // panel5
@@ -290,7 +297,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1188, 631);
+            this.panel5.Size = new System.Drawing.Size(1790, 752);
             this.panel5.TabIndex = 5;
             // 
             // panel6
@@ -301,7 +308,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(450, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(738, 631);
+            this.panel6.Size = new System.Drawing.Size(1340, 752);
             this.panel6.TabIndex = 5;
             // 
             // panel8
@@ -311,52 +318,20 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 239);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(738, 392);
+            this.panel8.Size = new System.Drawing.Size(1340, 513);
             this.panel8.TabIndex = 1;
             // 
             // pnlTourPost
             // 
             this.pnlTourPost.AutoScroll = true;
             this.pnlTourPost.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.pnlTourPost.Controls.Add(this.pnlAddTable);
+            this.pnlTourPost.Controls.Add(this.fpnlNew);
             this.pnlTourPost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTourPost.Location = new System.Drawing.Point(369, 0);
             this.pnlTourPost.Name = "pnlTourPost";
-            this.pnlTourPost.Size = new System.Drawing.Size(369, 392);
+            this.pnlTourPost.Size = new System.Drawing.Size(971, 513);
             this.pnlTourPost.TabIndex = 1;
-            // 
-            // pnlLocation
-            // 
-            this.pnlLocation.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlLocation.Controls.Add(this.fpnlLocation);
-            this.pnlLocation.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLocation.Location = new System.Drawing.Point(0, 0);
-            this.pnlLocation.Name = "pnlLocation";
-            this.pnlLocation.Size = new System.Drawing.Size(369, 392);
-            this.pnlLocation.TabIndex = 0;
-            // 
-            // fpnlLocation
-            // 
-            this.fpnlLocation.AutoScroll = true;
-            this.fpnlLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fpnlLocation.Font = new System.Drawing.Font("VNI-Avo", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.fpnlLocation.ForeColor = System.Drawing.Color.Gold;
-            this.fpnlLocation.Location = new System.Drawing.Point(0, 0);
-            this.fpnlLocation.Name = "fpnlLocation";
-            this.fpnlLocation.Size = new System.Drawing.Size(369, 392);
-            this.fpnlLocation.TabIndex = 0;
-            // 
-            // fpnlTables
-            // 
-            this.fpnlTables.AutoScroll = true;
-            this.fpnlTables.BackColor = System.Drawing.Color.White;
-            this.fpnlTables.Controls.Add(this.pnlAddTable);
-            this.fpnlTables.Controls.Add(this.panel10);
-            this.fpnlTables.Controls.Add(this.panel11);
-            this.fpnlTables.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fpnlTables.Location = new System.Drawing.Point(0, 0);
-            this.fpnlTables.Name = "fpnlTables";
-            this.fpnlTables.Size = new System.Drawing.Size(738, 239);
-            this.fpnlTables.TabIndex = 0;
             // 
             // pnlAddTable
             // 
@@ -381,21 +356,23 @@
             this.pnlAddTable.Controls.Add(this.ckbPrivate);
             this.pnlAddTable.Controls.Add(this.nudTableNumber);
             this.pnlAddTable.Controls.Add(this.cbFacility);
-            this.pnlAddTable.Location = new System.Drawing.Point(3, 3);
+            this.pnlAddTable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlAddTable.Location = new System.Drawing.Point(0, 0);
             this.pnlAddTable.Name = "pnlAddTable";
             this.pnlAddTable.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pnlAddTable.Size = new System.Drawing.Size(700, 230);
+            this.pnlAddTable.Size = new System.Drawing.Size(945, 251);
             this.pnlAddTable.TabIndex = 0;
             // 
             // btnCreateTable
             // 
+            this.btnCreateTable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCreateTable.BackColor = System.Drawing.Color.BurlyWood;
             this.btnCreateTable.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCreateTable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnCreateTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateTable.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateTable.Image")));
             this.btnCreateTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreateTable.Location = new System.Drawing.Point(256, 142);
+            this.btnCreateTable.Location = new System.Drawing.Point(378, 151);
             this.btnCreateTable.Name = "btnCreateTable";
             this.btnCreateTable.Size = new System.Drawing.Size(187, 32);
             this.btnCreateTable.TabIndex = 16;
@@ -405,10 +382,11 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label5.Location = new System.Drawing.Point(476, 86);
+            this.label5.Location = new System.Drawing.Point(700, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 17);
             this.label5.TabIndex = 15;
@@ -416,10 +394,11 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label4.Location = new System.Drawing.Point(476, 33);
+            this.label4.Location = new System.Drawing.Point(700, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 17);
             this.label4.TabIndex = 14;
@@ -427,10 +406,11 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label3.Location = new System.Drawing.Point(139, 182);
+            this.label3.Location = new System.Drawing.Point(156, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 17);
             this.label3.TabIndex = 13;
@@ -438,10 +418,11 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label6.Location = new System.Drawing.Point(573, 133);
+            this.label6.Location = new System.Drawing.Point(797, 141);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 17);
             this.label6.TabIndex = 12;
@@ -449,10 +430,11 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label2.Location = new System.Drawing.Point(139, 133);
+            this.label2.Location = new System.Drawing.Point(156, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 17);
             this.label2.TabIndex = 12;
@@ -463,7 +445,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("VNI-Avo", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label1.Location = new System.Drawing.Point(72, 74);
+            this.label1.Location = new System.Drawing.Point(89, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.TabIndex = 11;
@@ -471,10 +453,11 @@
             // 
             // nudPlayerLimit
             // 
+            this.nudPlayerLimit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudPlayerLimit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nudPlayerLimit.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.nudPlayerLimit.ForeColor = System.Drawing.Color.Gold;
-            this.nudPlayerLimit.Location = new System.Drawing.Point(629, 121);
+            this.nudPlayerLimit.Location = new System.Drawing.Point(853, 129);
             this.nudPlayerLimit.Maximum = new decimal(new int[] {
             6,
             0,
@@ -496,6 +479,7 @@
             // 
             // cbGameRules
             // 
+            this.cbGameRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbGameRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbGameRules.DropDownWidth = 400;
             this.cbGameRules.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
@@ -512,7 +496,7 @@
             "Race to 7 ",
             "BO5",
             "BO7"});
-            this.cbGameRules.Location = new System.Drawing.Point(504, 53);
+            this.cbGameRules.Location = new System.Drawing.Point(728, 61);
             this.cbGameRules.MaxDropDownItems = 12;
             this.cbGameRules.Name = "cbGameRules";
             this.cbGameRules.Size = new System.Drawing.Size(194, 30);
@@ -520,6 +504,7 @@
             // 
             // cbGameType
             // 
+            this.cbGameType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbGameType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbGameType.DropDownWidth = 400;
             this.cbGameType.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
@@ -532,7 +517,7 @@
             "DealtByCard-Locally Popular",
             "53Points",
             "Debt9Ball"});
-            this.cbGameType.Location = new System.Drawing.Point(504, 3);
+            this.cbGameType.Location = new System.Drawing.Point(728, 11);
             this.cbGameType.MaxDropDownItems = 30;
             this.cbGameType.Name = "cbGameType";
             this.cbGameType.Size = new System.Drawing.Size(194, 30);
@@ -540,10 +525,11 @@
             // 
             // nudHourOfTime
             // 
+            this.nudHourOfTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.nudHourOfTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nudHourOfTime.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.nudHourOfTime.ForeColor = System.Drawing.Color.Gold;
-            this.nudHourOfTime.Location = new System.Drawing.Point(3, 170);
+            this.nudHourOfTime.Location = new System.Drawing.Point(20, 191);
             this.nudHourOfTime.Maximum = new decimal(new int[] {
             23,
             0,
@@ -555,10 +541,11 @@
             // 
             // nudMinuteOfTime
             // 
+            this.nudMinuteOfTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.nudMinuteOfTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nudMinuteOfTime.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.nudMinuteOfTime.ForeColor = System.Drawing.Color.Gold;
-            this.nudMinuteOfTime.Location = new System.Drawing.Point(72, 170);
+            this.nudMinuteOfTime.Location = new System.Drawing.Point(89, 191);
             this.nudMinuteOfTime.Maximum = new decimal(new int[] {
             60,
             0,
@@ -570,10 +557,11 @@
             // 
             // nudMonthOfDate
             // 
+            this.nudMonthOfDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.nudMonthOfDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nudMonthOfDate.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.nudMonthOfDate.ForeColor = System.Drawing.Color.Gold;
-            this.nudMonthOfDate.Location = new System.Drawing.Point(72, 121);
+            this.nudMonthOfDate.Location = new System.Drawing.Point(89, 142);
             this.nudMonthOfDate.Maximum = new decimal(new int[] {
             12,
             0,
@@ -595,10 +583,11 @@
             // 
             // nudDayOfDate
             // 
+            this.nudDayOfDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.nudDayOfDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nudDayOfDate.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.nudDayOfDate.ForeColor = System.Drawing.Color.Gold;
-            this.nudDayOfDate.Location = new System.Drawing.Point(3, 121);
+            this.nudDayOfDate.Location = new System.Drawing.Point(20, 142);
             this.nudDayOfDate.Maximum = new decimal(new int[] {
             31,
             0,
@@ -610,24 +599,27 @@
             // 
             // txtPrivateKey
             // 
+            this.txtPrivateKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrivateKey.BackColor = System.Drawing.Color.Black;
             this.txtPrivateKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrivateKey.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtPrivateKey.ForeColor = System.Drawing.Color.Gold;
-            this.txtPrivateKey.Location = new System.Drawing.Point(537, 194);
+            this.txtPrivateKey.Location = new System.Drawing.Point(772, 216);
             this.txtPrivateKey.Name = "txtPrivateKey";
             this.txtPrivateKey.Size = new System.Drawing.Size(150, 29);
             this.txtPrivateKey.TabIndex = 3;
             this.txtPrivateKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrivateKey.Visible = false;
+            this.txtPrivateKey.TextChanged += new System.EventHandler(this.txtPrivateKey_TextChanged);
             // 
             // ckbPrivate
             // 
+            this.ckbPrivate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ckbPrivate.AutoSize = true;
             this.ckbPrivate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ckbPrivate.Font = new System.Drawing.Font("VNI-Avo", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ckbPrivate.ForeColor = System.Drawing.Color.Khaki;
-            this.ckbPrivate.Location = new System.Drawing.Point(537, 165);
+            this.ckbPrivate.Location = new System.Drawing.Point(784, 190);
             this.ckbPrivate.Name = "ckbPrivate";
             this.ckbPrivate.Size = new System.Drawing.Size(124, 23);
             this.ckbPrivate.TabIndex = 2;
@@ -640,7 +632,7 @@
             this.nudTableNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nudTableNumber.Font = new System.Drawing.Font("VNI-Avo", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.nudTableNumber.ForeColor = System.Drawing.Color.Gold;
-            this.nudTableNumber.Location = new System.Drawing.Point(3, 62);
+            this.nudTableNumber.Location = new System.Drawing.Point(20, 62);
             this.nudTableNumber.Name = "nudTableNumber";
             this.nudTableNumber.Size = new System.Drawing.Size(63, 29);
             this.nudTableNumber.TabIndex = 1;
@@ -652,11 +644,54 @@
             this.cbFacility.Font = new System.Drawing.Font("VNI-Avo", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.cbFacility.ForeColor = System.Drawing.Color.Gold;
             this.cbFacility.FormattingEnabled = true;
-            this.cbFacility.Location = new System.Drawing.Point(3, 3);
+            this.cbFacility.Location = new System.Drawing.Point(20, 11);
             this.cbFacility.Name = "cbFacility";
             this.cbFacility.Size = new System.Drawing.Size(201, 31);
             this.cbFacility.TabIndex = 0;
             this.cbFacility.SelectedIndexChanged += new System.EventHandler(this.cbFacility_SelectedIndexChanged);
+            // 
+            // fpnlNew
+            // 
+            this.fpnlNew.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.fpnlNew.Location = new System.Drawing.Point(0, 251);
+            this.fpnlNew.Name = "fpnlNew";
+            this.fpnlNew.Size = new System.Drawing.Size(945, 464);
+            this.fpnlNew.TabIndex = 0;
+            // 
+            // pnlLocation
+            // 
+            this.pnlLocation.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlLocation.Controls.Add(this.fpnlLocation);
+            this.pnlLocation.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLocation.Location = new System.Drawing.Point(0, 0);
+            this.pnlLocation.Name = "pnlLocation";
+            this.pnlLocation.Size = new System.Drawing.Size(369, 513);
+            this.pnlLocation.TabIndex = 0;
+            // 
+            // fpnlLocation
+            // 
+            this.fpnlLocation.AutoScroll = true;
+            this.fpnlLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpnlLocation.Font = new System.Drawing.Font("VNI-Avo", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.fpnlLocation.ForeColor = System.Drawing.Color.Gold;
+            this.fpnlLocation.Location = new System.Drawing.Point(0, 0);
+            this.fpnlLocation.Name = "fpnlLocation";
+            this.fpnlLocation.Size = new System.Drawing.Size(369, 513);
+            this.fpnlLocation.TabIndex = 0;
+            // 
+            // fpnlTables
+            // 
+            this.fpnlTables.AutoScroll = true;
+            this.fpnlTables.BackColor = System.Drawing.Color.White;
+            this.fpnlTables.Controls.Add(this.panel10);
+            this.fpnlTables.Controls.Add(this.panel11);
+            this.fpnlTables.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fpnlTables.Font = new System.Drawing.Font("VNI-Avo", 9.999999F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.fpnlTables.ForeColor = System.Drawing.Color.White;
+            this.fpnlTables.Location = new System.Drawing.Point(0, 0);
+            this.fpnlTables.Name = "fpnlTables";
+            this.fpnlTables.Size = new System.Drawing.Size(1340, 239);
+            this.fpnlTables.TabIndex = 0;
             // 
             // panel10
             // 
@@ -664,7 +699,7 @@
             this.panel10.Controls.Add(this.label8);
             this.panel10.Controls.Add(this.label7);
             this.panel10.Controls.Add(this.button1);
-            this.panel10.Location = new System.Drawing.Point(3, 239);
+            this.panel10.Location = new System.Drawing.Point(3, 3);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(250, 230);
             this.panel10.TabIndex = 1;
@@ -674,7 +709,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(37, 46);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 25);
+            this.label8.Size = new System.Drawing.Size(72, 27);
             this.label8.TabIndex = 2;
             this.label8.Text = "label8";
             // 
@@ -683,7 +718,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(37, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 25);
+            this.label7.Size = new System.Drawing.Size(72, 27);
             this.label7.TabIndex = 1;
             this.label7.Text = "label7";
             // 
@@ -700,7 +735,7 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel11.Location = new System.Drawing.Point(259, 239);
+            this.panel11.Location = new System.Drawing.Point(259, 3);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(243, 230);
             this.panel11.TabIndex = 1;
@@ -709,10 +744,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1188, 631);
+            this.ClientSize = new System.Drawing.Size(1790, 752);
             this.Controls.Add(this.panel5);
             this.Font = new System.Drawing.Font("VNI-Avo", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MinimumSize = new System.Drawing.Size(1210, 600);
+            this.MinimumSize = new System.Drawing.Size(1700, 700);
             this.Name = "frmUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User";
@@ -729,8 +764,7 @@
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            this.pnlLocation.ResumeLayout(false);
-            this.fpnlTables.ResumeLayout(false);
+            this.pnlTourPost.ResumeLayout(false);
             this.pnlAddTable.ResumeLayout(false);
             this.pnlAddTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerLimit)).EndInit();
@@ -739,6 +773,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMonthOfDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDayOfDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTableNumber)).EndInit();
+            this.pnlLocation.ResumeLayout(false);
+            this.fpnlTables.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.ResumeLayout(false);
@@ -793,5 +829,6 @@
         private Label label7;
         private Button button1;
         private FlowLayoutPanel fpnlLocation;
+        private FlowLayoutPanel fpnlNew;
     }
 }

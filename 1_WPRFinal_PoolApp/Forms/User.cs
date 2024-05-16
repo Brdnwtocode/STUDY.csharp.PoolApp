@@ -150,7 +150,8 @@ namespace _1_WPRFinal_PoolApp.Forms
         private void frmUser_Load(object sender, EventArgs e)
         {
             LoadFacilitiesComboBox();
-            TABLE.LoadTables(fpnlTables);
+            TOURNAMENT.LoadTournamentPanels(fpnlTables);
+            TABLE.LoadTables(fpnlNew);
             Facility.GenerateFacilityPanels(fpnlLocation);
         }
 
@@ -208,7 +209,7 @@ namespace _1_WPRFinal_PoolApp.Forms
             {
                 tb.InsertTable();
                 Data.TABLEs.Add(tb);
-                TABLE.LoadTables(fpnlTables);
+                TABLE.LoadTables(fpnlNew);
             }
             catch(Exception ex)
             {
@@ -246,7 +247,15 @@ namespace _1_WPRFinal_PoolApp.Forms
 
         private void btnTournament_Click(object sender, EventArgs e)
         {
+            UserTournament userTournament = new UserTournament();
+            this.Hide();
+            userTournament.ShowDialog();
+            this.Show();
+        }
 
+        private void txtPrivateKey_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

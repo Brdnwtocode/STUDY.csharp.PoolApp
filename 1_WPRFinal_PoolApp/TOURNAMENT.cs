@@ -1,7 +1,9 @@
-﻿using System;
+﻿using _1_WPRFinal_PoolApp.userForms;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,8 +16,8 @@ namespace _1_WPRFinal_PoolApp
         public string TournamentName { get; set; }
         public string Organizer { get; set; }
         public string Location { get; set; }
-        public DateOnly DateStart { get; set; }
-        public DateOnly DateEnd { get; set; }
+        public DateTime DateStart { get; set; }
+        public DateTime DateEnd { get; set; }
         public string Description { get; set; }
         public int NumberOfPlayers { get; set; }
         public int PlayersNow { get; set; }
@@ -42,20 +44,26 @@ namespace _1_WPRFinal_PoolApp
                         command.Parameters.AddWithValue("@TournamentName", tournament.TournamentName);
                         command.Parameters.AddWithValue("@Organizer", tournament.Organizer);
                         command.Parameters.AddWithValue("@Location", tournament.Location);
-                        command.Parameters.AddWithValue("@DateStart", tournament.DateStart);
-                        command.Parameters.AddWithValue("@DateEnd", tournament.DateEnd);
+                        command.Parameters.AddWithValue("@DateStart", tournament.DateStart.Date);
+                        command.Parameters.AddWithValue("@DateEnd", tournament.DateEnd.Date);
                         command.Parameters.AddWithValue("@Description", tournament.Description);
                         command.Parameters.AddWithValue("@NumberOfPlayers", tournament.NumberOfPlayers);
-                        command.Parameters.AddWithValue("@PlayersNow", tournament.PlayersNow);
-                        command.Parameters.AddWithValue("@WinnerID", tournament.WinnerID);
-                        command.Parameters.AddWithValue("@WinnerName", tournament.WinnerName);
+                        command.Parameters.AddWithValue("@PlayersNow", 0);
+                        command.Parameters.AddWithValue("@WinnerID", DBNull.Value);
+                        command.Parameters.AddWithValue("@WinnerName", DBNull.Value);
 
                         // Convert Image to byte array
-                        byte[] imageBytes = ImageToByteArray(tournament.image);
-                        command.Parameters.AddWithValue("@Image", imageBytes);
+                        if (tournament.image != null)
+                        {
+                            byte[] imageBytes = Fn.ImageToByteArray(tournament.image);
+                            command.Parameters.AddWithValue("@Image", imageBytes);
+                        }
+                        else command.Parameters.AddWithValue("@Image", DBNull.Value);
 
                         connection.Open();
                         command.ExecuteNonQuery();
+
+                        MessageBox.Show("Tournament Created successfully!");
                     }
                 }
             }
@@ -74,6 +82,218 @@ namespace _1_WPRFinal_PoolApp
                 return ms.ToArray();
             }
         }
+
+        // Generate Panels
+        public static void LoadTournamentPanels(FlowLayoutPanel fpnlTournaments)
+        {
+            // Clear existing controls in the flow panel
+            fpnlTournaments.Controls.Clear();
+
+            // Iterate through the list of tournaments
+            foreach (var tournament in Data.TOURNAMENTs)
+            {
+                // Create a panel to display tournament information
+                Panel tournamentPanel = new Panel();
+                tournamentPanel.BorderStyle = BorderStyle.FixedSingle;
+                tournamentPanel.Width = 500;
+                tournamentPanel.Height = 230;
+                Random rnd = new Random(tournament.UID + 2000);
+                tournamentPanel.BackColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+
+                // Add tournament information to the panel
+                Label lblTournamentName = new Label();
+                lblTournamentName.Text = "Tournament Name: " + tournament.TournamentName;
+                lblTournamentName.AutoSize = true;
+                lblTournamentName.Location = new System.Drawing.Point(10, 10);
+                tournamentPanel.Controls.Add(lblTournamentName);
+                lblTournamentName.BackColor = Color.Black;
+                lblTournamentName.ForeColor = Color.White;
+
+                Label lblOrganizer = new Label();
+                lblOrganizer.Text = "Organizer: " + tournament.Organizer;
+                lblOrganizer.AutoSize = true;
+                lblOrganizer.Location = new System.Drawing.Point(10, 40);
+                tournamentPanel.Controls.Add(lblOrganizer);
+                lblOrganizer.BackColor = Color.LightCoral;
+                lblOrganizer.ForeColor = Color.Black;
+
+                Label lblLocation = new Label();
+                lblLocation.Text = "Location: " + tournament.Location;
+                lblLocation.AutoSize = true;
+                lblLocation.Location = new System.Drawing.Point(10, 65);
+                tournamentPanel.Controls.Add(lblLocation);
+                lblLocation.BackColor = Color.Black;
+                lblLocation.ForeColor = Color.White;
+
+                Label lblDate = new Label();
+                lblDate.Text = "Date: " + tournament.DateStart.ToString("MM/dd/yyyy") + " - " + tournament.DateEnd.ToString("MM/dd/yyyy");
+                lblDate.AutoSize = true;
+                lblDate.Location = new System.Drawing.Point(10, 90);
+                tournamentPanel.Controls.Add(lblDate);
+                lblDate.BackColor = Color.LightGray;
+                lblDate.ForeColor = Color.Black;
+
+                Label lblAvailableSlots = new Label();
+                lblAvailableSlots.Text = "Available Slots: " + (tournament.NumberOfPlayers - tournament.PlayersNow);
+                lblAvailableSlots.AutoSize = true;
+                lblAvailableSlots.Location = new System.Drawing.Point(10, 115);
+                tournamentPanel.Controls.Add(lblAvailableSlots);
+                lblAvailableSlots.BackColor = Color.Black;
+                lblAvailableSlots.ForeColor = Color.White;
+
+                // Create a button to enter the tournament
+                Button btnEnterTournament = new Button();
+                btnEnterTournament.Text = "Enter Tournament";
+                btnEnterTournament.AutoSize = true;
+                btnEnterTournament.Location = new System.Drawing.Point(10, 140);
+                btnEnterTournament.BackColor = Color.SpringGreen;
+                btnEnterTournament.ForeColor = Color.Black;
+
+                // Use a lambda expression to capture the TournamentID within the event handler
+                btnEnterTournament.Click += (sender, e) =>
+                {
+                    string tournamentID = tournament.TournamentID;
+                    // Call a function to handle entering the tournament with the captured tournamentID
+                    EnterTournament(Data.AccID, tournamentID); 
+                    // Reload the panel generation function to reflect the changes
+                    LoadTournamentPanels(fpnlTournaments);
+                };
+
+                // Add the button to the panel
+                tournamentPanel.Controls.Add(btnEnterTournament);
+
+                // Add the panel to the flow panel
+                fpnlTournaments.Controls.Add(tournamentPanel);
+            }
+        }
+
+        // Function to handle entering a tournament
+        public static void EnterTournament(int userID, string tournamentID)
+        {
+            try
+            {
+                // Check if the user has already entered the tournament
+                string query = @"SELECT COUNT(*) FROM UserTournamentRelationship WHERE UserID = @UserID AND TournamentID = @TournamentID";
+                int existingRelationshipCount = 0;
+
+                using (SqlConnection connection = new SqlConnection(Fn.Con()))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserID", userID);
+                        command.Parameters.AddWithValue("@TournamentID", tournamentID);
+
+                        existingRelationshipCount = (int)command.ExecuteScalar();
+                    }
+                }
+
+                if (existingRelationshipCount > 0)
+                {
+                    // User has already entered the tournament, display a message
+                    MessageBox.Show("You have already entered this tournament.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // If the user has not entered the tournament, insert a new relationship
+                // Write your SQL query to insert the relationship into the UserTournamentRelationship table
+                string insertQuery = @"INSERT INTO UserTournamentRelationship (UserID, TournamentID, RelationshipStatus) VALUES (@UserID, @TournamentID, 'Compete')";
+
+                using (SqlConnection connection = new SqlConnection(Fn.Con()))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserID", userID);
+                        command.Parameters.AddWithValue("@TournamentID", tournamentID);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                // Update the tournament
+                UpdateTournament(tournamentID);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error entering tournament: " + ex.Message);
+            }
+        }
+
+        public static void UpdateTournament(string tournamentID)
+        {
+            try
+            {
+                // Establish a connection to the database using SqlConnection
+                using (SqlConnection connection = new SqlConnection(Fn.Con()))
+                {
+                    // Open the connection
+                    connection.Open();
+
+                    // Define your SQL query to update the tournament in the Tournament table
+                    string updateQuery = @"UPDATE Tournament SET PlayersNow = PlayersNow + 1 WHERE TournamentID = @TournamentID";
+
+                    // Create a SqlCommand object to execute the updateQuery
+                    using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                    {
+                        // Add parameters to the command
+                        command.Parameters.AddWithValue("@TournamentID", tournamentID);
+
+                        // Execute the updateQuery
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                // Update the tournament in the static list Data.Tournaments
+                TOURNAMENT tournamentToUpdate = Data.TOURNAMENTs.FirstOrDefault(t => t.TournamentID == tournamentID);
+                if (tournamentToUpdate != null)
+                {
+                    // Update the tournament object
+                    tournamentToUpdate.PlayersNow++;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error updating tournament: " + ex.Message);
+            }
+        }
+
+        public static void UpdateTournamentWinner(string tournamentID, int winnerID)
+        {
+            // Update the tournament winner in the database
+            string updateQuery = "UPDATE Tournament SET WinnerID = @WinnerID, WinnerName = @WinnerName,  WHERE TournamentID = @TournamentID";
+            string WinnerName = USER.GetUserNameFromID(winnerID);
+            using (SqlConnection connection = new SqlConnection(Fn.Con()))
+            {
+                using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@WinnerID", winnerID);
+                    command.Parameters.AddWithValue("@WinnerName", WinnerName);
+                    command.Parameters.AddWithValue("@TournamentID", tournamentID);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            // Update the tournament winner in the static list Data.Tournaments
+            TOURNAMENT tournamentToUpdate = Data.TOURNAMENTs.FirstOrDefault(t => t.TournamentID == tournamentID);
+            if (tournamentToUpdate != null)
+            {
+                tournamentToUpdate.WinnerID = winnerID;
+                tournamentToUpdate.WinnerName = WinnerName;
+                // You can also update other properties of the tournament if needed
+            }
+            string q = "Congrats!! " + WinnerName+ " for becoming the winner!";
+            MessageBox.Show(q);
+        }
+
+
+
+
 
 
         public static List<TOURNAMENT> LoadTournamentsFromDatabase()
@@ -119,12 +339,12 @@ namespace _1_WPRFinal_PoolApp
                             // Parse DateStart if it is not null
                             if (!reader.IsDBNull(reader.GetOrdinal("DateStart")))
                             {
-                                tournament.DateStart = DateOnly.Parse(reader["DateStart"].ToString());
+                                tournament.DateStart = DateTime.Parse(reader["DateStart"].ToString()).Date;
                             }
                             // Parse DateEnd if it is not null
                             if (!reader.IsDBNull(reader.GetOrdinal("DateEnd")))
                             {
-                                tournament.DateEnd = DateOnly.Parse(reader["DateEnd"].ToString());
+                                tournament.DateEnd = DateTime.Parse(reader["DateEnd"].ToString()).Date;
                             }
 
                             tournaments.Add(tournament);

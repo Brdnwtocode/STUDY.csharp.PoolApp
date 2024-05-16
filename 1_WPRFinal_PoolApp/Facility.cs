@@ -1,7 +1,9 @@
-﻿using System;
+﻿using _1_WPRFinal_PoolApp.userForms;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,7 +66,79 @@ namespace _1_WPRFinal_PoolApp
             return facilities;
         }
 
+        //
+        public  void InsertFacility(Facility facility)
+        {
+            string query = @"INSERT INTO Facility ( FacilityID,FacilityName, Location, Capacity, Description, Image) 
+                     VALUES (@FacilityID,@FacilityName, @Location, @Capacity, @Description, @Image)";
 
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Fn.Con()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@FacilityID", facility.ID);
+                        command.Parameters.AddWithValue("@FacilityName", facility.Name);
+                        command.Parameters.AddWithValue("@Location", facility.Location);
+                        command.Parameters.AddWithValue("@Capacity", facility.Capacity);
+                        command.Parameters.AddWithValue("@Description", facility.Description);
+
+                        // Convert the Image to byte array
+                        if (facility.image != null)
+                        {
+                            byte[] imageBytes = Fn.ImageToByteArray(facility.image);
+                            command.Parameters.AddWithValue("@Image", imageBytes);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@Image", DBNull.Value);
+                        }
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        InsertFacilityOwner(Data.AccID, facility.ID);
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inserting facility data: " + ex.Message);
+            }
+        }
+
+        public static void InsertFacilityOwner(int ownerID, int facilityID)
+        {
+            string query = @"INSERT INTO FacilityOwner (BusinessID, FacilityID) 
+                     VALUES (@OwnerID, @FacilityID)";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Fn.Con()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@OwnerID", ownerID);
+                        command.Parameters.AddWithValue("@FacilityID", facilityID);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        
+                        MessageBox.Show("Create Facility Completed!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error inserting facility owner data: " + ex.Message);
+            }
+        }
+
+
+        //
         public static string GetFacilityNameFromID(int facilityID)
         {
             Facility facility = Data.facilities.FirstOrDefault(f => f.ID == facilityID);
